@@ -955,6 +955,7 @@ def case_study():
                    "about": p["brand"], "creator": {"@type": "Organization", "name": "Whatta Match Media"}, "url": f'{DOMAIN}/work/{p["slug"]}.html'}]
         body = header("work.html", d) + f"""<main id="main">
 <section class="page-hero">{hero_line("wm-cs")}<div class="wrap">
+  <a class="back-link" href="../work.html"><span aria-hidden="true">←</span> All work</a>
   <p class="eyebrow">Case study · {p["sector"]}</p>
   <h1 class="h1" style="max-width:20ch">{p["title"]}</h1>
   <p class="lede">{p["lede"]}</p>
