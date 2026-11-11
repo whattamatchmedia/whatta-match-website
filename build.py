@@ -192,9 +192,9 @@ SERVICES = [
 PROJECTS = [
     dict(slug="bann-thann", brand="Bann Thann", logo="bann-thann.svg", sector="Indian menswear", market="Law College Road, Pune", current=True,
          cats=["identity", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
-         card="Building a new menswear brand from its first month: we grow and manage its social media and run the marketing strategy behind the store\u2019s footfall.",
-         title="Not a launch. A neighbourhood that <span class=\"serif\">learns where you are.</span>",
-         lede="We are building Bann Thann\u2019s brand, growing and managing its social media, and running its marketing strategy, starting with a quiet, provable arrival on Law College Road, Pune.",
+         card="Growing a contemporary menswear studio from scratch: we grow and manage its social media and run the marketing strategy behind the store\u2019s footfall.",
+         title="A contemporary studio, <span class=\"serif\">built from the first thread.</span>",
+         lede="We are building Bann Thann\u2019s brand, growing and managing its social media, and running its marketing strategy, growing a contemporary menswear studio on Law College Road, Pune, from its very first month.",
          challenge="A new store needed people walking in and knowing where it is, a voice that sounds like Bann Thann and not an ad, and its garments seen properly. All without a launch event, an influencer blitz, paid ads or discounts in month one.",
          insight="People buy from a store they already feel they know. Familiarity, trust and a clear reason to visit come before any big announcement.",
          did=[("Brand building", "A brand voice and identity system that sounds like Bann Thann, not an ad."),
