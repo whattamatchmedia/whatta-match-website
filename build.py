@@ -191,10 +191,10 @@ SERVICES = [
 # by: "wmm" = Whatta Match Media engagement, "nainee" = from Nainee Sohane's earlier roles
 PROJECTS = [
     dict(slug="bann-thann", brand="Bann Thann", logo=None, sector="Indian menswear", market="Law College Road, Pune", current=True,
-         cats=["strategy", "content", "social", "consulting"], services="Brand voice, local footfall, campaigns, community", by="wmm",
-         card="A quiet arrival for a new menswear store: a brand voice, neighbourhood footfall, four small campaigns and a WhatsApp circle.",
+         cats=["identity", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
+         card="Building a new menswear brand from its first month: we grow and manage its social media and run the marketing strategy behind the store\u2019s footfall.",
          title="Not a launch. A neighbourhood that <span class=\"serif\">learns where you are.</span>",
-         lede="Footfall, voice and garment presence for a new Indian menswear store on Law College Road, Pune. Small steps we can prove, before anything loud.",
+         lede="We are building Bann Thann\u2019s brand, growing and managing its social media, and running its marketing strategy, starting with a quiet, provable arrival on Law College Road, Pune.",
          challenge="A new store needed people walking in and knowing where it is, a voice that sounds like Bann Thann and not an ad, and its garments seen properly. All without a launch event, an influencer blitz, paid ads or discounts in month one.",
          insight="Most men buy Indian wear only when an occasion gives them permission. Give him everyday permission, let the people he trusts vouch for the store, and let him see the name seven times before he walks in.",
          did=[("A voice in three routes", "The Heart, the Seller and the Finder: \u201cApne liye bhi\u201d, \u201cKapda bolta hai\u201d and \u201cBann Thann\u2019s building\u201d."),
@@ -203,10 +203,10 @@ PROJECTS = [
               ("Community and shoot", "A WhatsApp circle grown like a guest list, and one shoot day planned to feed three months of content.")],
          outcome="A month-one plan built on small steps the store can prove, with six numbers counted every week, from walk-ins by source to how many visitors say \u201cBann Thann\u2019s building\u201d."),
     dict(slug="beleader", brand="BeLeader", logo="beleader", sector="Leadership development", market="India", current=True,
-         cats=["consulting", "content"], services="Marketing consultancy, programme communication", by="wmm",
-         card="A marketing system connecting Poornima's expert voice with BeLeader's programmes and the team that runs them.",
+         cats=["consulting", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
+         card="Building BeLeader\u2019s brand and Poornima\u2019s expert voice, growing and managing their social media, and running the marketing strategy for each programme.",
          title="Leadership expertise needs a marketing system <span class=\"serif\">that keeps up.</span>",
-         lede="We connected Poornima's expert voice, BeLeader's programmes and the practical work of marketing execution.",
+         lede="We build BeLeader\u2019s brand and Poornima\u2019s expert voice, grow and manage their social media, and run the marketing strategy behind each programme.",
          challenge="BeLeader speaks to three audiences: employee leadership, founder transformation and organisational culture. Poornima's personal voice also had to stay distinct from the company's programme communication.",
          insight="The expert builds trust; the company makes the offer and the next step clear. Giving both the same voice blurs their jobs. A working system gives each one its own role.",
          did=[("Separate voices", "Poornima's personal brand and BeLeader's company calendar were planned as two distinct streams."),
@@ -215,10 +215,10 @@ PROJECTS = [
               ("Execution clarity", "Deliverables, hiring, coordination and reporting, plus Yashada presentation materials.")],
          outcome="Programme copy, cohort collateral, presentations and an execution plan now work together, so the team knows what to create, who owns it and how the next conversation is handled."),
     dict(slug="ava", brand="AVA", logo=None, sector="Restaurant, bar and terrace café", market="Pune", current=True,
-         cats=["identity", "content", "social", "strategy"], services="Experience branding, event creative, daypart planning", by="wmm",
-         card="One terrace, two brands: Sunnyside Social by day and AVA by night, with event creative for AVA\u2019s live-music evenings.",
+         cats=["identity", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
+         card="Building and growing AVA and Sunnyside Social: brand, social media we grow and manage, event creative and the marketing strategy for every part of the day.",
          title="One terrace can belong to <span class=\"serif\">every moment of the day.</span>",
-         lede="Experience branding for a terrace that opens as Sunnyside Social for breakfast and becomes AVA in the evening, plus creative for AVA\u2019s Unplugged live-music nights.",
+         lede="We build and grow AVA and Sunnyside Social: the brand, the social media we manage day to day, and the marketing strategy for a terrace that runs from breakfast to live music.",
          challenge="The same space serves breakfast, brunch, working visits and an evening bar. Each moment needed its own reason to visit, and AVA\u2019s live-music nights needed communication that felt like part of the evening.",
          insight="People choose a place by the moment they are in. Plan the space around its daily rhythm, and even a small tabletop card becomes part of the experience.",
          did=[("Daypart structure", "A 9 AM breakfast opening, a noon pizza counter and the move into AVA after 7 PM."),
@@ -597,8 +597,6 @@ def brand_mark(p, prefix, cls=""):
 
 def project_card(p, prefix):
     origin = '<span class="origin">Founder\'s earlier role</span>' if p["by"] == "nainee" else ""
-    if p.get("current"):
-        origin += '<span class="badge-current">Current client</span>'
     return f"""<a class="work-card project reveal" data-cat="{' '.join(p['cats'])}" href="{prefix}work/{p['slug']}.html">
       <span class="tag">{p['sector']} · {p['market']}</span>
       <div class="art">{brand_mark(p, prefix)}</div>
@@ -761,10 +759,12 @@ def render_viz(p):
 
 def cs_panel(p, i):
     icons = "".join(f'<span class="cs-icon" title="{SVC_NAME[c]}">{art(c, f"csi-{p["slug"]}-{c}") if c != "consulting" else art("strategy", f"csi-{p["slug"]}-c")}<em>{SVC_NAME[c]}</em></span>' for c in p["cats"])
-    chips = "".join(f"<li>{html.escape(t)}</li>" for t, _ in p["did"])
+    ongoing = ["Brand building", "Social media growth", "Social media management", "Marketing strategy"]
+    chips = "".join(f"<li>{html.escape(t)}</li>" for t in ongoing) if p.get("current") else "".join(f"<li>{html.escape(t)}</li>" for t, _ in p["did"])
+    label = "What we do for them, every month" if p.get("current") else "What we delivered"
     return f"""<div class="cs-hero reveal">
     <div class="cs-hero-mark">{brand_mark(p, "../", "brand-logo--xl")}</div>
-    <div class="cs-hero-side"><p class="mono" style="color:var(--amber)">What we delivered</p><ul class="cs-chips">{chips}</ul>
+    <div class="cs-hero-side"><p class="mono" style="color:var(--amber)">{label}</p><ul class="cs-chips">{chips}</ul>
       <div class="cs-icons">{icons}</div></div>
     {wave_mark("cs-wave", "csw" + str(i))}</div>"""
 
@@ -964,7 +964,7 @@ def case_study():
                    "about": p["brand"], "creator": {"@type": "Organization", "name": "Whatta Match Media"}, "url": f'{DOMAIN}/work/{p["slug"]}.html'}]
         body = header("work.html", d) + f"""<main id="main">
 <section class="page-hero">{hero_line("wm-cs")}<div class="wrap">
-  <p class="eyebrow">{"Current client" if p.get("current") else "Case study"} · {p["sector"]}</p>
+  <p class="eyebrow">Case study · {p["sector"]}</p>
   <h1 class="h1" style="max-width:20ch">{p["title"]}</h1>
   <p class="lede">{p["lede"]}</p>
 </div></section>
