@@ -3,4 +3,4 @@ Allow: /
 Disallow: /thank-you.html
 Disallow: /work/case-study.html
 
-Sitemap: https://www.whattamatch.com/sitemap.xml
+Sitemap: https://whattamatchmedia.com/sitemap.xml

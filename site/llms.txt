@@ -3,15 +3,15 @@
 > A global, holistic marketing and branding agency based in India. One team covers consulting, brand strategy, identity and design, content and creative, social and influence, performance and growth, and media and digital experiences. Founded by Nainee Sohane and Srushti Gadekar.
 
 ## Services
-- [Consulting](https://www.whattamatch.com/services/consulting.html): Senior advice on brand, marketing and growth, from a single session to an embedded partnership.
-- [Brand Strategy](https://www.whattamatch.com/services/brand-strategy.html): Research, positioning and a plan that tells everyone where the brand is going.
-- [Brand Identity & Design](https://www.whattamatch.com/services/brand-identity-design.html): Logo systems, visual identity, packaging and guidelines built to scale.
-- [Content & Creative](https://www.whattamatch.com/services/content-creative.html): Campaigns, film, photography, copy, motion and 3D that people stop for.
-- [Social & Influence](https://www.whattamatch.com/services/social-influence.html): Social strategy, community management and creator programmes.
-- [Performance & Growth](https://www.whattamatch.com/services/performance-growth.html): Paid media, SEO, conversion, analytics and automation.
-- [Media & Digital Experiences](https://www.whattamatch.com/services/media-digital.html): Media planning and buying, websites, apps and e-commerce.
+- [Consulting](https://whattamatchmedia.com/services/consulting.html): Senior advice on brand, marketing and growth, from a single session to an embedded partnership.
+- [Brand Strategy](https://whattamatchmedia.com/services/brand-strategy.html): Research, positioning and a plan that tells everyone where the brand is going.
+- [Brand Identity & Design](https://whattamatchmedia.com/services/brand-identity-design.html): Logo systems, visual identity, packaging and guidelines built to scale.
+- [Content & Creative](https://whattamatchmedia.com/services/content-creative.html): Campaigns, film, photography, copy, motion and 3D that people stop for.
+- [Social & Influence](https://whattamatchmedia.com/services/social-influence.html): Social strategy, community management and creator programmes.
+- [Performance & Growth](https://whattamatchmedia.com/services/performance-growth.html): Paid media, SEO, conversion, analytics and automation.
+- [Media & Digital Experiences](https://whattamatchmedia.com/services/media-digital.html): Media planning and buying, websites, apps and e-commerce.
 
 ## Company
-- [About](https://www.whattamatch.com/about.html)
-- [Insights](https://www.whattamatch.com/insights.html)
-- [Contact](https://www.whattamatch.com/contact.html): hello@whattamatch.com
+- [About](https://whattamatchmedia.com/about.html)
+- [Insights](https://whattamatchmedia.com/insights.html)
+- [Contact](https://whattamatchmedia.com/contact.html): hello@whattamatch.com

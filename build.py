@@ -5,7 +5,7 @@ Edit the CONTENT below, then run:  python3 build.py
 import json, os, re, html
 
 SITE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
-DOMAIN = "https://www.whattamatch.com"          # change to the live domain
+DOMAIN = "https://whattamatchmedia.com"           # live domain (Netlify primary)
 EMAIL = "hello@whattamatch.com"                 # change to the real inbox
 FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"   # see README: paste your Formspree form URL
 BOOKING_URL = "https://cal.com/whattamatch"     # change to your booking link
