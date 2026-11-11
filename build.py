@@ -337,7 +337,7 @@ PROJECTS = [
 ]
 HOME_PROJECTS = ["91-cmo", "beleader", "sasp-advisors", "tradesabha", "flockngo", "mood-drums"]
 
-# Brand logos the team has worked with (from the Brand Logo Catalogue)
+# Agency client logos (from the Brand Logo Catalogue; Whatta Match Media was formerly BANO Digital)
 LOGO_WALL = [("bridgestone", "Bridgestone"), ("michelin", "Michelin"), ("emaar", "Emaar"), ("damac", "DAMAC"),
              ("sobha", "SOBHA Realty"), ("hdfc-bank", "HDFC Bank"), ("reliance", "Reliance"), ("rupay", "RuPay"),
              ("nykaa", "Nykaa"), ("firstcry", "FirstCry"), ("irctc", "IRCTC"), ("haldirams", "Haldiram's"),
@@ -584,7 +584,7 @@ def logo_wall(prefix):
     imgs = "".join(f'<li><img src="{prefix}assets/logos/{s}.png" alt="{html.escape(n)}" loading="lazy"></li>' for s, n in LOGO_WALL)
     dup = "".join(f'<li aria-hidden="true"><img src="{prefix}assets/logos/{s}.png" alt="" loading="lazy"></li>' for s, n in LOGO_WALL)
     return f"""<section class="sec logos" aria-labelledby="logos-h">
-  <div class="wrap"><div class="sec-head sec-head--row reveal"><div><p class="eyebrow">Brands our team has worked with</p>
+  <div class="wrap"><div class="sec-head sec-head--row reveal"><div><p class="eyebrow">Brands we have worked with</p>
     <h2 class="h2" id="logos-h">Trusted by names <span class="serif">you know.</span></h2></div></div></div>
   <div class="marquee"><ul class="marquee-track">{imgs}{dup}</ul></div>
 </section>
