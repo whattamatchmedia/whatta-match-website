@@ -175,7 +175,7 @@
       if (form.querySelector(".hp input") && form.querySelector(".hp input").value) return;
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var ep = form.getAttribute("data-endpoint");
-      var next = form.getAttribute("data-next") || "/thank-you.html";
+      var next = form.getAttribute("data-next") || "/thank-you";
       if (!ep || ep.indexOf("YOUR_") > -1) { window.location.href = next; return; }
       if (status) status.textContent = "Sending…";
       fetch(ep, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })

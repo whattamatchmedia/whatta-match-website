@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /thank-you.html
-Disallow: /work/case-study.html
+Disallow: /thank-you
+Disallow: /work/case-study
 
 Sitemap: https://whattamatchmedia.com/sitemap.xml
