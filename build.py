@@ -186,14 +186,191 @@ SERVICES = [
                ("Do you offer hosting?", "We set up and manage hosting on reliable global providers.")]),
 ]
 
-CASES = [("Case study coming soon", "Brand Strategy", "strategy", "strategy"),
-         ("Case study coming soon", "Brand Identity & Design", "identity", "identity"),
-         ("Case study coming soon", "Content & Creative", "content", "content"),
-         ("Case study coming soon", "Social & Influence", "social", "social"),
-         ("Case study coming soon", "Performance & Growth", "performance", "performance"),
-         ("Case study coming soon", "Media & Digital", "media", "media")]
+# ---------- Work: projects (from the case-study documents) ----------
+# cats use the service "art" keys: consulting, strategy, identity, content, social, performance, media
+# by: "wmm" = Whatta Match Media engagement, "nainee" = from Nainee Sohane's earlier roles
+PROJECTS = [
+    dict(slug="91-cmo", brand="91 CMO", logo=None, sector="Leadership community", market="India",
+         cats=["strategy", "identity", "content"], services="Naming, positioning, launch content", by="wmm",
+         card="Naming, positioning and launch content for an invitation-only community of CMOs and CX heads.",
+         title="Give senior leaders a conversation <span class=\"serif\">worth their time.</span>",
+         lede="Identity and launch direction for an India-focused community of marketing and customer-experience leaders, based in Pune.",
+         challenge="91 CMO was being shaped as an exclusive community for marketing and CX leaders. It needed a purpose beyond a company-led sales channel, while building founder Neelam Kalra's visibility.",
+         insight="Senior leaders don't need another feed or networking group. The invitation has to make the quality of the conversation tangible: questions worth discussing, peers worth meeting and a reason to return.",
+         did=[("Community identity", "The name became 91 CMO. We dropped Club and tied 91 to India's calling code."),
+              ("Positioning", "Invitation-only, built around CMOs and CX heads, with an independent community purpose."),
+              ("Launch content", "Launch posts, member invitations, a monthly calendar and themes around the hard truths marketing leaders face."),
+              ("Experience planning", "Website pillars, community goals and event formats. Tangerine orange and a coming-together idea led the visual direction.")],
+         outcome="One proposition runs through the name, identity, invitations and content themes: a reason for senior marketing and CX leaders to take part, and to come back."),
+    dict(slug="beleader", brand="BeLeader", logo="beleader", sector="Leadership development", market="India",
+         cats=["consulting", "content"], services="Marketing consultancy, programme communication", by="wmm",
+         card="A marketing system connecting Poornima's expert voice with BeLeader's programmes and the team that runs them.",
+         title="Leadership expertise needs a marketing system <span class=\"serif\">that keeps up.</span>",
+         lede="We connected Poornima's expert voice, BeLeader's programmes and the practical work of marketing execution.",
+         challenge="BeLeader speaks to three audiences: employee leadership, founder transformation and organisational culture. Poornima's personal voice also had to stay distinct from the company's programme communication.",
+         insight="The expert builds trust; the company makes the offer and the next step clear. Giving both the same voice blurs their jobs. A working system gives each one its own role.",
+         did=[("Separate voices", "Poornima's personal brand and BeLeader's company calendar were planned as two distinct streams."),
+              ("Programme relevance", "Content for employee leadership, the Transformation Leadership Program and cultural-audit conversations."),
+              ("Cohort communication", "WhatsApp copy, posters, programme messaging and follow-up scripts for the alumni cohort."),
+              ("Execution clarity", "Deliverables, hiring, coordination and reporting, plus Yashada presentation materials.")],
+         outcome="Programme copy, cohort collateral, presentations and an execution plan now work together, so the team knows what to create, who owns it and how the next conversation is handled."),
+    dict(slug="sasp-advisors", brand="SASP Advisors LLP", logo="sasp", sector="Financial advisory", market="India",
+         cats=["content", "social", "strategy"], services="Company narrative, partner personal branding", by="wmm",
+         card="One firm voice and three expert voices: company narrative, partner content calendars and a Budget 2025 workstream.",
+         title="Three expert voices, <span class=\"serif\">one firm.</span>",
+         lede="We connected the firm's service communication with the expertise of its three chartered-accountant partners.",
+         challenge="SASP offers debt syndication, project finance, construction finance and business loans. Businesses needed to see quickly where that expertise fits their situation.",
+         insight="Financial expertise becomes valuable when a business owner recognises their own problem in it. Partners explaining real situations do that better than a list of services.",
+         did=[("Company narrative", "Company profile, service positioning, marketing and content."),
+              ("Three expert voices", "Personal-branding calendars for CA Pratik Karpe, CA Jayesh Meena and CA Sanket Alawani."),
+              ("Timely relevance", "A Budget 2025 workstream linking a policy moment to the firm's services."),
+              ("Content structure", "Service explainers and partner viewpoints sharing one firm voice, each partner owning their subject.")],
+         outcome="The firm now has a company story and three partner voices that reinforce each other, plus a repeatable way to turn policy moments into relevant content."),
+    dict(slug="tradesabha", brand="Tradesabha", logo="tradesabha", sector="B2B industrial marketplace", market="India",
+         cats=["performance", "strategy", "media"], services="Growth strategy, SEO, supplier onboarding", by="wmm",
+         card="A growth plan connecting search, supplier onboarding and expo activity to the trade the platform exists to enable.",
+         title="A marketplace needs useful connections <span class=\"serif\">before more sign-ups.</span>",
+         lede="A marketing strategy for a B2B industrial marketplace where the value begins after registration.",
+         challenge="Registrations alone don't make a marketplace work. Suppliers and buyers need to find each other and trade, and acquisition had to be planned around that.",
+         insight="People join a trading platform for connections they can trust. Every channel should lead to a useful next step, not just a sign-up count.",
+         did=[("Acquisition scope", "Search visibility, onboarding and expo planning in one proposal, not three separate activities."),
+              ("Onboarding goal", "Planning around a target of 1,000 supplier onboardings."),
+              ("Message direction", "Simple, reliable and trustworthy trade, with connections as the reason to join."),
+              ("Execution plan", "Category pages, a supplier onboarding guide and expo-to-demo follow-up.")],
+         outcome="Search, onboarding and events now point the same way: towards the trading relationships the platform was built for."),
+    dict(slug="mood-drums", brand="MOOD Drums", logo="mood-drums", sector="Hospitality and nightlife", market="Pune",
+         cats=["social", "content"], services="Campaign calendar, creators, community", by="wmm",
+         card="Music, creators and content planned around weekday reasons to visit a kitchen and bar.",
+         title="A weekday needs a reason <span class=\"serif\">to become a night out.</span>",
+         lede="A hospitality campaign connecting weekday occasions with music, creators and community.",
+         challenge="Weekends fill themselves. Weekdays need a reason for people to choose this venue over staying in.",
+         insight="People come back for a recurring moment they belong to, not for one-off event posts. Music communities create those moments.",
+         did=[("Campaign planning", "A brand campaign calendar with weekly reels and static-content strategy."),
+              ("Creator activity", "An influencer plan as part of the campaign."),
+              ("Community", "A DJ and music-community direction for recurring participation."),
+              ("Weekday occasions", "Events linking music, food and drinks to defined reasons to visit.")],
+         outcome="A campaign built on recurring weekday occasions, with content, creators and the music community working towards the same visit."),
+    dict(slug="flockngo", brand="Flockngo", logo="flockngo", sector="Group commerce app", market="India and USA",
+         cats=["consulting", "strategy"], services="Market research, go-to-market", by="wmm",
+         card="Research and go-to-market planning for group buying in two very different markets: India and the USA.",
+         title="Buying together only works when getting together <span class=\"serif\">feels easy.</span>",
+         lede="Group-commerce research framed around both the purchase and the effort of bringing people together.",
+         challenge="Flockngo was looking at India and the USA. One market-entry story was unlikely to suit both.",
+         insight="The offer is only half the decision. The other half is the effort of forming a group: who invites whom, and where coordination breaks down.",
+         did=[("Two-market research", "Separate research for India and the USA rather than one assumed story."),
+              ("Marketing plan", "A marketing plan as part of the strategy."),
+              ("Product questions", "The purchase occasion, who forms the group, what makes people accept and where it gets difficult."),
+              ("Tests before spend", "Market-specific proposition tests, a group-offer explainer and an invitation-flow prototype.")],
+         outcome="A research and go-to-market plan that tests the group journey in each market before committing acquisition budget."),
+    dict(slug="bann-thann-ke", brand="Bann Thann Ke", logo=None, sector="Retail fashion", market="Pune",
+         cats=["consulting", "content", "social"], services="Launch strategy, integrated content", by="wmm",
+         card="A short-timeline store launch bringing social content, WhatsApp, word of mouth and the space itself together.",
+         title="A store launch needs reasons to visit, <span class=\"serif\">not just to follow.</span>",
+         lede="A short-timeline retail launch planned across social content and local discovery.",
+         challenge="The launch date was 21 October 2026 and preparation time was short. The plan had to go beyond a feed: word of mouth, WhatsApp, product placement and the store's community space.",
+         insight="A post can introduce a brand, but a retail decision needs a reason to come in. Linking the product story to a local occasion makes social content lead to the door.",
+         did=[("Consulting first", "Business and marketing direction set before choosing activities."),
+              ("Launch collateral", "A launch-carousel concept and quotation materials."),
+              ("Content scope", "Static posts, carousels, stories, reels and dedicated content writing."),
+              ("Integrated channels", "Product placement, word of mouth, WhatsApp and community-space use alongside social.")],
+         outcome="Social discovery and the in-store experience planned as one journey, giving local audiences a reason to step inside."),
+    dict(slug="blend-studioo", brand="Blend Studioo", logo="blend-studioo", sector="Salon", market="Baner, Pune",
+         cats=["identity", "strategy"], services="Logo, brand philosophy, pre-launch campaign", by="wmm",
+         card="Logo, brand philosophy and a pre-launch campaign for a new salon earning its first appointments.",
+         title="A new salon has to earn confidence <span class=\"serif\">before the first booking.</span>",
+         lede="A salon's first impression, built through identity, philosophy and pre-launch communication.",
+         challenge="A new salon asks people to trust it with their look before they have experienced it. Awareness alone doesn't answer why.",
+         insight="The first appointment is a decision about confidence. Clear services, visible expertise and an easy booking path help people picture the experience.",
+         did=[("Brand foundation", "Logo and brand philosophy."),
+              ("Launch communication", "A pre-launch campaign for the Baner area of Pune."),
+              ("Proof", "Stylist introductions, service previews and launch invitations."),
+              ("Booking path", "Local content leading to a clear enquiry and appointment process.")],
+         outcome="Identity, philosophy and local communication in one plan, taking people from first impression to first appointment."),
+    dict(slug="nincasa", brand="NINCASA", logo="nincasa", sector="Brewery and food venue", market="Pune",
+         cats=["strategy", "consulting"], services="Business analysis, positioning", by="wmm",
+         card="Positioning a brewery venue around the occasion people choose it for, backed by SWOT, PESTLE and STP.",
+         title="A venue is easier to remember <span class=\"serif\">when it owns a reason to visit.</span>",
+         lede="Venue positioning that connects business analysis with the occasion a customer chooses.",
+         challenge="In a crowded food and drink scene, a good venue still needs one clear reason to be picked for a specific night out.",
+         insight="People choose venues by occasion. Owning one occasion clearly beats being vaguely good for everything.",
+         did=[("Business analysis", "SWOT and PESTLE."),
+              ("Audience and positioning", "Segmentation, audience priorities and positioning (STP)."),
+              ("Marketing plan", "A marketing plan built on the chosen position."),
+              ("Execution", "A priority occasion, signature-experience content and communication matched to the venue's stage.")],
+         outcome="A positioning grounded in analysis, giving every piece of marketing one reason for people to choose NINCASA."),
+    dict(slug="asian-business-connexions", brand="Asian Business Connexions", logo="asian-business-connexions", sector="Business inclusion", market="North East England, UK",
+         cats=["content", "social", "media"], services="Campaign and event communication", by="nainee",
+         card="Inclusion By Default: a UK campaign carried across social, newsletters, radio and an annual awards dinner.",
+         title="Inclusion becomes credible when people <span class=\"serif\">can see how to take part.</span>",
+         lede="A campaign connecting an inclusion ambition for North East England with community channels and an awards event.",
+         challenge="A regional inclusion ambition needs more than an inspiring statement. Partners and businesses need to see how they belong and what taking part looks like.",
+         insight="Purpose becomes real through people, stories and chances to act. A consistent campaign links the big ambition to the businesses that make it visible.",
+         did=[("Campaign platform", "Inclusion By Default, linked to making North East England more inclusive."),
+              ("Channels", "LinkedIn, Facebook, Instagram, newsletters and a radio show."),
+              ("Awards dinner", "Marketing for the Annual Awards Dinner 2024."),
+              ("One message", "One campaign identity across every channel instead of a different message in each.")],
+         outcome="A recognisable campaign platform with places to appear and clear invitations to participate, from social posts to the awards night."),
+    dict(slug="pooja-wakharkar", brand="Pooja Wakharkar", logo="aligned-with-pooja", sector="Coaching and personal brand", market="India",
+         cats=["strategy", "identity", "content"], services="Brand discovery, voice, content", by="wmm",
+         card="Brand discovery and content that turns an abstract coaching promise into everyday situations people recognise.",
+         title="People recognise their own experience <span class=\"serif\">before a coaching category.</span>",
+         lede="Bringing an abstract coaching promise closer to the situations people live every day.",
+         challenge="Words like alignment and mental performance are abstract. The audience needed to see their own lives in the brand before they would consider coaching.",
+         insight="People respond to the moment they feel, like the guilt of resting, long before they search for a coaching category.",
+         did=[("Brand discovery", "Audience, brand essence and voice, supported by a discovery form."),
+              ("Identity and language", "Moodboard, bio, tone guide, content buckets and a hashtag framework."),
+              ("Content territories", "Burnout, loneliness, emotional masking and the pressure of constant positivity."),
+              ("Script development", "The Guilt of Resting: a 50 to 60 second voiceover concept.")],
+         outcome="A personal brand with a clear voice and content rooted in tensions the audience already knows."),
+    dict(slug="bunty-prashant-studio", brand="Bunty Prashant Studio", logo="bunty-prashant", sector="Creative workshops", market="India",
+         cats=["content", "social"], services="Campaign ideas, reels, scripts, coordination", by="wmm",
+         card="Workshop promotion through campaign ideas, reels, scripts and coordinated creative production.",
+         title="Before people book a workshop, <span class=\"serif\">they need to picture it.</span>",
+         lede="Workshop promotion through scripts, campaign ideas and coordinated creative support.",
+         challenge="A workshop is bought on trust. People need to see what they will learn and who will teach them before they register.",
+         insight="Lead with a learning problem people recognise, show the facilitator's approach, then make the details and the registration step obvious.",
+         did=[("Campaign thinking", "Strategy, campaign ideas, client meetings and approvals."),
+              ("Promotional content", "Reels, scripts and promotional content for the workshops."),
+              ("Creative coordination", "Content collection, editor coordination, scheduling, posting and stories."),
+              ("Message structure", "Problem, approach, then a clear path to register.")],
+         outcome="Workshop promotion that makes the learning visible before the booking, run end to end from idea to posting."),
+]
+HOME_PROJECTS = ["91-cmo", "beleader", "sasp-advisors", "tradesabha", "flockngo", "mood-drums"]
 
-FOUNDERS = [("Nainee Sohane", "Co-founder"), ("Srushti Gadekar", "Co-founder")]
+# Brand logos the team has worked with (from the Brand Logo Catalogue)
+LOGO_WALL = [("bridgestone", "Bridgestone"), ("michelin", "Michelin"), ("emaar", "Emaar"), ("damac", "DAMAC"),
+             ("sobha", "SOBHA Realty"), ("hdfc-bank", "HDFC Bank"), ("reliance", "Reliance"), ("rupay", "RuPay"),
+             ("nykaa", "Nykaa"), ("firstcry", "FirstCry"), ("irctc", "IRCTC"), ("haldirams", "Haldiram's"),
+             ("saint-gobain", "Saint-Gobain"), ("jk-tyre", "JK Tyre"), ("au-bank", "AU Small Finance Bank"),
+             ("lakme-salon", "Lakmé Salon"), ("accessorize", "Accessorize London"), ("kolte-patil", "Kolte-Patil"),
+             ("vtp", "VTP Realty"), ("zouk", "Zouk"), ("arvind", "The Arvind Store"), ("bni", "BNI"),
+             ("time", "T.I.M.E."), ("lavie", "Lavie")]
+
+PARTNER = dict(name="DREO Digital", url="https://dreodigital.com", city="London, UK",
+               line="Our global partner in the UK for branding, SEO, Google Ads and websites.")
+
+TEAM = [
+    dict(name="Nainee Sohane", role="Co-founder", photo="nainee", li="https://www.linkedin.com/in/nainee-sohane-a6b463143/",
+         bio="Brand and consumer strategist who believes people don't buy products, they buy what they feel about a brand. She has led brand and lead-generation work across real estate, BFSI, education, tourism and manufacturing, and teaches marketing as a guest lecturer at MIT World Peace University."),
+    dict(name="Srushti Gadekar", role="Co-founder", photo="srushti", li="https://www.linkedin.com/in/srushti-gadekar-26b054b0/",
+         bio="A NIFT Mumbai designer who led creative teams at Accenture, delivering hundreds of design projects and bringing generative AI into the design workflow. At Whatta Match she shapes strategy, brand building and the teams behind the work."),
+    dict(name="Vishal Jakkulwar", role="Global Client Acquisition Partner", photo="vishal", li="https://www.linkedin.com/in/vishal-jakkulwar/",
+         bio="UK-based consulting leader with 22+ years leading enterprise and digital transformation programmes. He builds our client relationships in the UK and Europe."),
+    dict(name="Supriya Joshi", role="Technical Head", photo="supriya", li="https://www.linkedin.com/in/supriyaj46/",
+         bio="20+ years across technology, product and digital businesses in fintech, healthcare, travel and enterprise tech. She leads the technology behind our websites, platforms and AI-enabled work."),
+    dict(name="Uwais Ahmad", role="Creative Head", photo=None, li="https://www.linkedin.com/in/uwaisahmad/",
+         bio="Mumbai-based director and producer, and founder of The Brain Freez 10. Since 2014 he has made brand, product and corporate films in live action and animation across India, the UAE and Europe."),
+]
+FOUNDERS = [(t["name"], t["role"]) for t in TEAM[:2]]
+
+LOCATIONS = [
+    dict(city="Pune", country="India", role="Headquarters", tz="Asia/Kolkata", tzl="IST · GMT+5:30",
+         addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=930, y=338),
+    dict(city="Dubai", country="UAE", role="Middle East", tz="Asia/Dubai", tzl="GST · GMT+4",
+         addr="Address to be confirmed", x=724, y=282),
+    dict(city="London", country="United Kingdom", role="Europe, with DREO Digital", tz="Europe/London", tzl="GMT / BST",
+         addr="Through our global partner DREO Digital", x=112, y=72),
+]
 
 ARTICLES = [
     dict(slug="brand-is-a-match", title="Your brand is a match, not a monologue", tag="Brand", date="October 2026", read="4 min",
@@ -297,7 +474,8 @@ def footer(depth, scripts=""):
       <div><h4>Connect</h4><ul><li><a href="mailto:{EMAIL}">{EMAIL}</a></li>{soc}</ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Whatta Match Media</span>
+      <span>© <span data-year>2026</span> Whatta Match Media · Pune · Dubai · London</span>
+      <span>Global partner: <a href="{PARTNER['url']}" rel="noopener" target="_blank">DREO Digital ↗</a></span>
       <span><a href="{p}privacy.html">Privacy</a> · <a href="{p}terms.html">Terms</a> · <a href="{p}cookies.html">Cookies</a></span>
     </div>
   </div>
@@ -369,7 +547,7 @@ def write(path, content):
 def redirects():
     """Explicit rules so /contact, /services/brand-strategy etc. load the right file.
     No catch-all: Netlify serves 404.html for anything else on its own."""
-    lines = ["# Clean URLs -> files (generated by build.py)"]
+    lines = ["# Clean URLs -> files (generated by build.py)", "/work/case-study  /work  301", "/work/case-study.html  /work  301"]
     for p in sorted(PAGES_WRITTEN):
         if p == "index.html":
             continue
@@ -379,14 +557,101 @@ def redirects():
     write("_redirects", "\n".join(lines) + "\n")
 
 # ---------- Home ----------
+# ---------- Work, team, partner and location components ----------
+SVC_NAME = {s["art"]: s["name"] for s in SERVICES}
+
+def proj(slug):
+    return next(p for p in PROJECTS if p["slug"] == slug)
+
+def brand_mark(p, prefix, cls=""):
+    if p["logo"]:
+        return f'<img class="brand-logo {cls}" src="{prefix}assets/logos/{p["logo"]}.png" alt="{html.escape(p["brand"])} logo" loading="lazy">'
+    return f'<span class="brand-word {cls}">{p["brand"]}</span>'
+
+def project_card(p, prefix):
+    origin = '<span class="origin">Founder\'s earlier role</span>' if p["by"] == "nainee" else ""
+    return f"""<a class="work-card project reveal" data-cat="{' '.join(p['cats'])}" href="{prefix}work/{p['slug']}.html">
+      <span class="tag">{p['sector']} · {p['market']}</span>
+      <div class="art">{brand_mark(p, prefix)}</div>
+      <div class="card-foot"><h3>{p['brand']}</h3><p class="card-line">{p['card']}</p><span class="soon">{p['services']}</span>{origin}</div></a>"""
+
+def work_filter(projects):
+    used = [s["art"] for s in SERVICES if any(s["art"] in p["cats"] for p in projects)]
+    btns = [("all", "All")] + [(k, SVC_NAME[k]) for k in used]
+    return "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{n}</button>' for k, n in btns)
+
+def logo_wall(prefix):
+    imgs = "".join(f'<li><img src="{prefix}assets/logos/{s}.png" alt="{html.escape(n)}" loading="lazy"></li>' for s, n in LOGO_WALL)
+    dup = "".join(f'<li aria-hidden="true"><img src="{prefix}assets/logos/{s}.png" alt="" loading="lazy"></li>' for s, n in LOGO_WALL)
+    return f"""<section class="sec logos" aria-labelledby="logos-h">
+  <div class="wrap"><div class="sec-head sec-head--row reveal"><div><p class="eyebrow">Brands our team has worked with</p>
+    <h2 class="h2" id="logos-h">Trusted by names <span class="serif">you know.</span></h2></div></div></div>
+  <div class="marquee"><ul class="marquee-track">{imgs}{dup}</ul></div>
+</section>
+"""
+
+def locations_section(prefix):
+    L = LOCATIONS
+    lon, dub, pun = L[2], L[1], L[0]
+    def arc(a, b, lift):
+        mx, my = (a["x"] + b["x"]) / 2, min(a["y"], b["y"]) - lift
+        return f'M{a["x"]},{a["y"]} Q{mx},{my} {b["x"]},{b["y"]}'
+    tz_lines = "".join(f'<line x1="{c["x"]}" y1="20" x2="{c["x"]}" y2="392" class="tz"/><text x="{c["x"]}" y="414" class="tzl">{c["tzl"]}</text>' for c in L)
+    nodes = "".join(f"""<g class="node"><circle cx="{c['x']}" cy="{c['y']}" r="22" class="pulse" style="animation-delay:{i * .6}s"/><circle cx="{c['x']}" cy="{c['y']}" r="8" fill="url(#locg)"/>
+      <text x="{c['x'] + (-16 if c['city'] == 'Pune' else 16)}" y="{c['y'] - 22}" text-anchor="{'end' if c['city'] == 'Pune' else 'start'}" class="city">{c['city']}</text>
+      <text x="{c['x'] + (-16 if c['city'] == 'Pune' else 16)}" y="{c['y'] - 4}" text-anchor="{'end' if c['city'] == 'Pune' else 'start'}" class="role">{c['role'].split(',')[0].upper()}</text></g>""" for i, c in enumerate(L))
+    svg = f"""<svg class="loc-map" viewBox="0 0 1040 420" role="img" aria-label="Map of Whatta Match Media locations: London, Dubai and Pune, connected across three time zones">
+  <defs><linearGradient id="locg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FF5F1F"/></linearGradient>
+  <pattern id="locdots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="rgba(243,238,228,.16)"/></pattern></defs>
+  <rect width="1040" height="400" fill="url(#locdots)" rx="18"/>
+  {tz_lines}
+  <path d="{arc(lon, dub, 120)}" class="route"/><path d="{arc(dub, pun, 70)}" class="route" style="animation-delay:.8s"/><path d="{arc(lon, pun, 230)}" class="route route--long" style="animation-delay:1.6s"/>
+  {nodes}
+</svg>"""
+    cards = "".join(f"""<div class="card loc-card reveal"><p class="mono" style="color:var(--amber)">0{i + 1} · {c['role']}</p>
+      <h3 class="h3">{c['city']}<span class="muted" style="font-weight:500">, {c['country']}</span></h3>
+      <p>{c['addr'] if c['city'] != 'London' else 'Through our global partner <a class="link" href="' + PARTNER['url'] + '" rel="noopener" target="_blank">DREO Digital</a>'}</p>
+      <p class="clock"><span data-tz="{c['tz']}">--:--</span><span class="mono muted">{c['tzl']}</span></p></div>""" for i, c in enumerate(L))
+    return f"""<section class="sec locations" id="locations" aria-labelledby="loc-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><p class="eyebrow">Where we work</p><h2 class="h2" id="loc-h">Three cities. <span class="serif">One team.</span></h2>
+      <p class="lede">Headquartered in Pune, working with brands across India, the Middle East and Europe.</p></div>
+    <div class="loc-visual reveal">{svg}</div>
+    <div class="loc-stats reveal"><div><b>3</b><span>Cities</span></div><div><b>3</b><span>Time zones</span></div><div><b>13h+</b><span>Of the working day covered</span></div></div>
+    <div class="grid-3 loc-cards">{cards}</div>
+  </div>
+</section>
+"""
+
+def partner_band(prefix):
+    return f"""<section class="sec partner"><div class="wrap">
+  <div class="partner-card reveal">
+    <div><p class="eyebrow">Global partner</p><h2 class="h2"><a href="{PARTNER['url']}" rel="noopener" target="_blank" class="partner-name">{PARTNER['name']}<span aria-hidden="true"> ↗</span></a></h2></div>
+    <div class="partner-copy"><p class="lede">{PARTNER['line']}</p><p class="muted">Together we serve brands in India, the UK and the Middle East with one plan and one point of contact. <span class="mono" style="color:var(--sky)">{PARTNER['city']}</span></p></div>
+  </div>
+</div></section>
+"""
+
+def portrait(t, prefix):
+    if t["photo"]:
+        return f"""<figure class="portrait-lg"><img src="{prefix}assets/team/{t['photo']}-duo.webp" alt="{t['name']}, {t['role']}" loading="lazy" width="640" height="800">
+        <img class="colour" src="{prefix}assets/team/{t['photo']}.webp" alt="" aria-hidden="true" loading="lazy" width="640" height="800"></figure>"""
+    ini = "".join(w[0] for w in t["name"].split())
+    return f'<figure class="portrait-lg portrait-lg--mono" role="img" aria-label="{t["name"]}"><span>{ini}</span></figure>'
+
+def team_card(t, prefix, big=False):
+    return f"""<article class="team-card{' team-card--big' if big else ''} reveal">{portrait(t, prefix)}
+      <div class="team-body"><h3 class="h3">{t['name']}</h3><p class="mono" style="color:var(--sky)">{t['role']}</p>
+      <p class="muted">{t['bio']}</p><a class="link" href="{t['li']}" rel="noopener" target="_blank">LinkedIn</a></div></article>"""
+
 def home():
     d = 0
     svc_list = "".join(f'<li{" class=\"on\"" if i == 0 else ""}><a href="services/{s["slug"]}.html">{s["name"]}</a></li>' for i, s in enumerate(SERVICES))
     svc_panels = "".join(f"""<div class="svc-panel{" on" if i == 0 else ""}"><span class="match-tag">{s["match"]}</span><h3>{s["name"]}</h3><p>{s["short"]}</p>
         <a class="link" href="services/{s["slug"]}.html">Explore</a></div>""" for i, s in enumerate(SERVICES))
-    cards = "".join(f"""<a class="work-card reveal" href="work/case-study.html">
-        <span class="tag">{c[1]}</span><div class="art">{wave_mark("", "wk" + str(i))}</div>
-        <div><h3>{c[0]}</h3><span class="soon">In production</span></div></a>""" for i, c in enumerate(CASES[:3]))
+    hp = [proj(k) for k in HOME_PROJECTS]
+    cards = "".join(project_card(p, "") for p in hp)
+    filt = work_filter(hp)
     body = f"""{header("index.html", d)}
 <canvas id="gl" aria-hidden="true"></canvas>
 <main id="main">
@@ -444,9 +709,12 @@ def home():
   <div class="wrap">
     <div class="sec-head sec-head--row reveal"><div><p class="eyebrow">Selected work</p><h2 class="h2">Work that <span class="serif">found its people.</span></h2></div>
       <a class="link" href="work.html">All work</a></div>
+    <div class="filter" role="group" aria-label="Filter work by discipline">{filt}</div>
     <div class="work-grid">{cards}</div>
   </div>
 </section>
+{logo_wall("")}
+{locations_section("")}
 
 <section class="sec finale" id="contact">
   <div class="wrap" style="display:grid;gap:30px">
@@ -510,17 +778,14 @@ def service_page(i, s):
 # ---------- About ----------
 def about():
     d = 0
-    founders = "".join(f"""<div class="card reveal" style="grid-template-columns:120px minmax(0,1fr);align-items:center;gap:24px">
-      <div class="portrait">{SILHOUETTE.replace("{g}", "af" + str(i))}</div>
-      <div style="display:grid;gap:10px"><h3 class="h3">{n}</h3><p class="mono" style="color:var(--sky)">{r}</p>
-      <p>{n.split()[0]} leads Whatta Match Media alongside {FOUNDERS[1 - i][0].split()[0]}. Full bio coming soon.</p>
-      <a class="link" href="https://www.linkedin.com" rel="noopener" target="_blank">LinkedIn</a></div></div>""" for i, (n, r) in enumerate(FOUNDERS))
+    team_big = "".join(team_card(t, "", True) for t in TEAM[:2])
+    team_rest = "".join(team_card(t, "") for t in TEAM[2:])
     values = [("Proof over promises", "Every claim we make sits next to a number, a result or a piece of work."),
               ("One team, one idea", "The people who write the strategy stay until the last ad goes live."),
               ("Clear beats clever", "We say things plainly, to clients and to their customers."),
               ("Built to travel", "Every brand we make is ready for more than one market.")]
     vals = "".join(f'<div class="card reveal"><h3>{t}</h3><p>{x}</p></div>' for t, x in values)
-    schema = [{"@context": "https://schema.org", "@type": "Person", "name": n, "jobTitle": r, "worksFor": {"@type": "Organization", "name": "Whatta Match Media"}} for n, r in FOUNDERS]
+    schema = [{"@context": "https://schema.org", "@type": "Person", "name": t["name"], "jobTitle": t["role"], "sameAs": [t["li"]], "worksFor": {"@type": "Organization", "name": "Whatta Match Media"}} for t in TEAM]
     body = header("about.html", d) + f"""<main id="main">
 {page_hero("About us", 'We exist to make <span class="serif">the match.</span>', "Whatta Match Media is a global marketing and branding agency. We bring consulting, strategy, identity, content, social, performance, media and digital together in one team, so nothing gets lost between them.")}
 <section class="sec"><div class="wrap grid-2">
@@ -528,13 +793,16 @@ def about():
   <div class="prose">
     <p>Too many good brands never reach the people they were made for. The strategy sits in a deck. The identity looks different on every channel. The campaign reaches the wrong audience. Each agency did its part, and the match still never happened.</p>
     <p>We built Whatta Match Media to close those gaps. One team carries a brand from the first question to the last result, with every discipline working from the same idea.</p>
-    <p>We are based in India and work with brands that want to be understood everywhere. Our job is simple to say and hard to do: find the people your brand is meant for, and make sure they can't look away.</p>
+    <p>We are headquartered in Pune, with a presence in Dubai and London through our global partner DREO Digital, and we work with brands that want to be understood everywhere. Our job is simple to say and hard to do: find the people your brand is meant for, and make sure they can't look away.</p>
   </div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head reveal"><p class="eyebrow">Founders</p><h2 class="h2">The people <span class="serif">behind the match.</span></h2></div>
-  <div class="grid-2">{founders}</div>
+  <div class="sec-head reveal"><p class="eyebrow">Our team</p><h2 class="h2">The people <span class="serif">behind the match.</span></h2></div>
+  <div class="team-grid team-grid--2">{team_big}</div>
+  <div class="team-grid team-grid--3">{team_rest}</div>
 </div></section>
+{partner_band("")}
+{locations_section("")}
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal"><p class="eyebrow">What we value</p><h2 class="h2">How we work, <span class="serif">every time.</span></h2></div>
   <div class="grid-2">{vals}</div>
@@ -547,60 +815,70 @@ def about():
 # ---------- Work ----------
 def work():
     d = 0
-    cats = [("all", "All")] + [(s["art"], s["name"]) for s in SERVICES]
-    filt = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{n}</button>' for k, n in cats)
-    cards = "".join(f"""<a class="work-card reveal" data-cat="{c[3]}" href="work/case-study.html"><span class="tag">{c[1]}</span>
-      <div class="art">{wave_mark("", "wp" + str(i))}</div><div><h3>{c[0]}</h3><span class="soon">In production</span></div></a>""" for i, c in enumerate(CASES))
+    cards = "".join(project_card(p, "") for p in PROJECTS)
     body = header("work.html", d) + f"""<main id="main">
-{page_hero("Work", 'Work that <span class="serif">found its people.</span>', "Our first case studies are being written up now. Ask us for the full portfolio on a call and we'll walk you through it.")}
+{page_hero("Work", 'Work that <span class="serif">found its people.</span>', "Strategy, identity, content and growth work for brands in India, the UK and beyond. Filter by discipline, or open a project for the full story.")}
 <section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="filter" role="group" aria-label="Filter work by discipline">{filt}</div>
+  <div class="filter" role="group" aria-label="Filter work by discipline">{work_filter(PROJECTS)}</div>
   <div class="work-grid">{cards}</div>
 </div></section>
+{logo_wall("")}
 {contact_block(d)}
 </main>
 """
-    write("work.html", head("Work | Whatta Match Media", "Selected brand, content, social, performance and digital work by Whatta Match Media.", "work.html", d) + body + footer(d))
+    write("work.html", head("Work | Whatta Match Media", "Selected brand strategy, identity, content, social and growth work by Whatta Match Media for brands in India, the UK and beyond.", "work.html", d) + body + footer(d))
 
 def case_study():
     d = 1
-    body = header("work.html", d) + f"""<main id="main">
+    n = len(PROJECTS)
+    for i, p in enumerate(PROJECTS):
+        nxt = PROJECTS[(i + 1) % n]
+        did = "".join(f'<div class="card reveal"><span class="mono" style="color:var(--amber)">0{j + 1}</span><h3>{t}</h3><p>{x}</p></div>' for j, (t, x) in enumerate(p["did"]))
+        svcs = ", ".join(SVC_NAME[c] for c in p["cats"])
+        by = "Whatta Match Media" if p["by"] == "wmm" else "Nainee Sohane, in an earlier role"
+        schema = [{"@context": "https://schema.org", "@type": "CreativeWork", "name": f'{p["brand"]} case study',
+                   "about": p["brand"], "creator": {"@type": "Organization", "name": "Whatta Match Media"}, "url": f'{DOMAIN}/work/{p["slug"]}.html'}]
+        body = header("work.html", d) + f"""<main id="main">
 <section class="page-hero">{hero_line("wm-cs")}<div class="wrap">
-  <p class="eyebrow">Case study · Template</p>
-  <h1 class="h1">Client name: the headline <span class="serif">result.</span></h1>
-  <p class="lede">One sentence on what changed for the client because of this work.</p>
+  <p class="eyebrow">Case study · {p["sector"]}</p>
+  <h1 class="h1" style="max-width:20ch">{p["title"]}</h1>
+  <p class="lede">{p["lede"]}</p>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="placeholder" style="aspect-ratio:16/8;display:grid;place-items:center;max-width:100%"><span class="mono">Hero image or film · 1920 × 960</span></div>
+  <div class="cs-hero reveal"><div class="cs-hero-mark">{brand_mark(p, "../", "brand-logo--xl")}</div>{wave_mark("cs-wave", "csw" + str(i))}</div>
   <div class="meta-row" style="margin-top:36px">
-    <div><span class="mono muted">Client</span><strong>Client name</strong></div>
-    <div><span class="mono muted">Market</span><strong>Country or region</strong></div>
-    <div><span class="mono muted">Services</span><strong>Strategy, Identity, Content</strong></div>
-    <div><span class="mono muted">Year</span><strong>2026</strong></div>
+    <div><span class="mono muted">Client</span><strong>{p["brand"]}</strong></div>
+    <div><span class="mono muted">Category</span><strong>{p["sector"]}</strong></div>
+    <div><span class="mono muted">Market</span><strong>{p["market"]}</strong></div>
+    <div><span class="mono muted">Disciplines</span><strong>{svcs}</strong></div>
+    <div><span class="mono muted">Delivered by</span><strong>{by}</strong></div>
   </div>
 </div></section>
 <section class="sec"><div class="wrap grid-2">
-  <div><p class="eyebrow">The challenge</p><h2 class="h2">What stood in the way</h2></div>
-  <p class="lede" style="align-self:end">Two or three sentences on the business problem, in the client's terms.</p>
+  <div><p class="eyebrow">The challenge</p><h2 class="h2">What stood <span class="serif">in the way.</span></h2></div>
+  <p class="lede" style="align-self:end">{p["challenge"]}</p>
 </div></section>
 <section class="sec"><div class="wrap grid-2">
   <div><p class="eyebrow">The insight</p><h2 class="h2">The match <span class="serif">we found.</span></h2></div>
-  <p class="lede" style="align-self:end">The truth about the audience that unlocked the work.</p>
+  <p class="lede" style="align-self:end">{p["insight"]}</p>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">The work</p><h2 class="h2">What we made</h2></div>
-  <div class="grid-3"><div class="placeholder" style="aspect-ratio:4/5">Image 1</div><div class="placeholder" style="aspect-ratio:4/5">Image 2</div><div class="placeholder" style="aspect-ratio:4/5">Image 3</div></div>
+  <div class="sec-head reveal"><p class="eyebrow">What we did</p><h2 class="h2">{p["services"]}</h2></div>
+  <div class="grid-2">{did}</div>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head"><p class="eyebrow">Results</p><h2 class="h2">What changed</h2></div>
-  <div class="numbers"><div class="num"><b>00%</b><span>Headline metric</span></div><div class="num"><b>0x</b><span>Second metric</span></div><div class="num"><b>00k</b><span>Third metric</span></div></div>
-  <blockquote class="quote" style="margin-top:72px">“Client testimonial goes here, approved in writing.”</blockquote>
-  <p class="mono muted">Name, title, company</p>
+  <div class="sec-head reveal"><p class="eyebrow">The outcome</p></div>
+  <blockquote class="quote reveal">{p["outcome"]}</blockquote>
+</div></section>
+<section class="sec"><div class="wrap">
+  <a class="next-project reveal" href="{nxt["slug"]}.html"><span class="mono muted">Next project</span>
+    <span class="next-name">{nxt["brand"]} <span class="arrow" aria-hidden="true">→</span></span><span class="muted">{nxt["card"]}</span></a>
 </div></section>
 {contact_block(d)}
 </main>
 """
-    write("work/case-study.html", head("Case study | Whatta Match Media", "Case study template.", "work/case-study.html", d, extra='<meta name="robots" content="noindex">') + body + footer(d))
+        desc = f'{p["brand"]} case study: {p["card"]}'
+        write(f'work/{p["slug"]}.html', head(f'{p["brand"]} case study | Whatta Match Media', desc, f'work/{p["slug"]}.html', d, schema) + body + footer(d))
 
 # ---------- Insights ----------
 def insights():
@@ -804,7 +1082,7 @@ def seo_files():
     pages += [f"services/{s['slug']}.html" for s in SERVICES] + [f"insights/{a['slug']}.html" for a in ARTICLES]
     urls = "".join(f"<url><loc>{DOMAIN}/{'' if p == 'index.html' else p}</loc><changefreq>monthly</changefreq></url>" for p in pages)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
-    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thank-you\nDisallow: /work/case-study\n\nSitemap: {DOMAIN}/sitemap.xml\n")
+    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thank-you\n\nSitemap: {DOMAIN}/sitemap.xml\n")
     svc = "\n".join(f"- [{s['name']}]({DOMAIN}/services/{s['slug']}.html): {s['short']}" for s in SERVICES)
     write("llms.txt", f"""# Whatta Match Media
 

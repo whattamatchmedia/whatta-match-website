@@ -271,3 +271,15 @@
   /* Footer year */
   var y = document.querySelector("[data-year]"); if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Local times for the locations section */
+(function () {
+  var els = document.querySelectorAll("[data-tz]");
+  if (!els.length || !window.Intl) return;
+  function tick() {
+    els.forEach(function (el) {
+      try { el.textContent = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: el.getAttribute("data-tz") }).format(new Date()); } catch (e) {}
+    });
+  }
+  tick(); setInterval(tick, 30000);
+})();
