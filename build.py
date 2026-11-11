@@ -638,8 +638,10 @@ def locations_section(prefix):
 def partner_band(prefix):
     return f"""<section class="sec partner"><div class="wrap">
   <div class="partner-card reveal">
-    <div><p class="eyebrow">Global partner</p><h2 class="h2"><a href="{PARTNER['url']}" rel="noopener" target="_blank" class="partner-name">{PARTNER['name']}<span aria-hidden="true"> ↗</span></a></h2></div>
-    <div class="partner-copy"><p class="lede">{PARTNER['line']}</p><p class="muted">Together we serve brands in India, the UK and the Middle East with one plan and one point of contact. <span class="mono" style="color:var(--sky)">{PARTNER['city']}</span></p></div>
+    <p class="eyebrow partner-eyebrow">Global partner</p>
+    <h2 class="h2 partner-title"><a href="{PARTNER['url']}" rel="noopener" target="_blank" class="partner-name">{PARTNER['name']}<span aria-hidden="true"> ↗</span></a></h2>
+    <div class="partner-copy"><p class="lede">{PARTNER['line']}</p><p class="muted">Together we serve brands in India, the UK and the Middle East with one plan and one point of contact.</p>
+      <p class="mono" style="color:var(--sky)">{PARTNER['city']}</p></div>
   </div>
 </div></section>
 """

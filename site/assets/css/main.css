@@ -633,3 +633,17 @@ main { position: relative; z-index: 2; }
   .team-grid--3 .team-bio { font-size: 14px; }
 }
 @media (max-width: 680px) { .team-grid--2, .team-grid--3 { grid-template-columns: minmax(0,1fr); } .team-grid--3 .team-head { grid-template-columns: auto minmax(0,1fr); } }
+
+/* Round 4 */
+.partner-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "eye eye" "title copy"; align-items: center; row-gap: 18px; }
+.partner-eyebrow { grid-area: eye; margin: 0; }
+.partner-title { grid-area: title; margin: 0; }
+.partner-copy { grid-area: copy; }
+.partner-name { color: var(--amber); background-image: var(--wave); }
+.partner-name:hover { color: var(--orange); }
+@media (max-width: 800px) { .partner-card { grid-template-columns: minmax(0,1fr); grid-template-areas: "eye" "title" "copy"; } }
+.loc-card .link, .site-footer a[href*="dreodigital"] { color: var(--amber); border-color: rgba(255,138,61,.45); }
+.loc-card .link:hover { border-color: var(--amber); }
+.team-head .h3 { color: var(--amber); }
+.loc-map text { paint-order: stroke; stroke: #0E1D38; stroke-width: 7px; stroke-linejoin: round; }
+.loc-map .role { font-weight: 600; fill: #FFA866; }
