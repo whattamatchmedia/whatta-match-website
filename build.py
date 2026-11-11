@@ -365,11 +365,11 @@ FOUNDERS = [(t["name"], t["role"]) for t in TEAM[:2]]
 
 LOCATIONS = [
     dict(city="Pune", country="India", role="Headquarters", tz="Asia/Kolkata", tzl="IST · GMT+5:30",
-         addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=930, y=338),
+         addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=940, y=196),
     dict(city="Dubai", country="UAE", role="Middle East", tz="Asia/Dubai", tzl="GST · GMT+4",
-         addr="Address to be confirmed", x=724, y=282),
-    dict(city="London", country="United Kingdom", role="Europe, with DREO Digital", tz="Europe/London", tzl="GMT / BST",
-         addr="Through our global partner DREO Digital", x=112, y=72),
+         addr="Address to be confirmed", x=720, y=160),
+    dict(city="London", country="United Kingdom", role="Europe", tz="Europe/London", tzl="GMT / BST",
+         addr="Through our global partner DREO Digital", x=110, y=60),
 ]
 
 ARTICLES = [
@@ -596,16 +596,17 @@ def locations_section(prefix):
     def arc(a, b, lift):
         mx, my = (a["x"] + b["x"]) / 2, min(a["y"], b["y"]) - lift
         return f'M{a["x"]},{a["y"]} Q{mx},{my} {b["x"]},{b["y"]}'
-    tz_lines = "".join(f'<line x1="{c["x"]}" y1="20" x2="{c["x"]}" y2="392" class="tz"/><text x="{c["x"]}" y="414" class="tzl">{c["tzl"]}</text>' for c in L)
+    tz_lines = "".join(f'<line x1="{c["x"]}" y1="14" x2="{c["x"]}" y2="262" class="tz"/><text x="{c["x"]}" y="290" class="tzl">{c["tzl"]}</text>' for c in L)
+    anchor = {"London": ("start", 0), "Dubai": ("middle", 0), "Pune": ("middle", 0)}
     nodes = "".join(f"""<g class="node"><circle cx="{c['x']}" cy="{c['y']}" r="22" class="pulse" style="animation-delay:{i * .6}s"/><circle cx="{c['x']}" cy="{c['y']}" r="8" fill="url(#locg)"/>
-      <text x="{c['x'] + (-16 if c['city'] == 'Pune' else 16)}" y="{c['y'] - 22}" text-anchor="{'end' if c['city'] == 'Pune' else 'start'}" class="city">{c['city']}</text>
-      <text x="{c['x'] + (-16 if c['city'] == 'Pune' else 16)}" y="{c['y'] - 4}" text-anchor="{'end' if c['city'] == 'Pune' else 'start'}" class="role">{c['role'].split(',')[0].upper()}</text></g>""" for i, c in enumerate(L))
-    svg = f"""<svg class="loc-map" viewBox="0 0 1040 420" role="img" aria-label="Map of Whatta Match Media locations: London, Dubai and Pune, connected across three time zones">
+      <text x="{c['x'] - (14 if c['city'] == 'London' else 0)}" y="{c['y'] + 42}" text-anchor="{anchor[c['city']][0]}" class="city">{c['city']}</text>
+      <text x="{c['x'] - (14 if c['city'] == 'London' else 0)}" y="{c['y'] + 62}" text-anchor="{anchor[c['city']][0]}" class="role">{c['role'].upper()}</text></g>""" for i, c in enumerate(L))
+    svg = f"""<svg class="loc-map" viewBox="0 0 1040 300" role="img" aria-label="Map of Whatta Match Media locations: London, Dubai and Pune, connected across three time zones">
   <defs><linearGradient id="locg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FF5F1F"/></linearGradient>
   <pattern id="locdots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="rgba(243,238,228,.16)"/></pattern></defs>
-  <rect width="1040" height="400" fill="url(#locdots)" rx="18"/>
+  <rect width="1040" height="270" fill="url(#locdots)" rx="18"/>
   {tz_lines}
-  <path d="{arc(lon, dub, 120)}" class="route"/><path d="{arc(dub, pun, 70)}" class="route" style="animation-delay:.8s"/><path d="{arc(lon, pun, 230)}" class="route route--long" style="animation-delay:1.6s"/>
+  <path d="{arc(lon, dub, 60)}" class="route"/><path d="{arc(dub, pun, 50)}" class="route" style="animation-delay:.8s"/><path d="{arc(lon, pun, 110)}" class="route route--long" style="animation-delay:1.6s"/>
   {nodes}
 </svg>"""
     cards = "".join(f"""<div class="card loc-card reveal"><p class="mono" style="color:var(--amber)">0{i + 1} · {c['role']}</p>
@@ -778,8 +779,9 @@ def service_page(i, s):
 # ---------- About ----------
 def about():
     d = 0
-    team_big = "".join(team_card(t, "", True) for t in TEAM[:2])
-    team_rest = "".join(team_card(t, "") for t in TEAM[2:])
+    team_cards = "".join(team_card(t, "") for t in TEAM) + """<a class="team-card team-join reveal" href="careers.html">
+      <div class="team-join-art" aria-hidden="true">+</div>
+      <div class="team-body"><h3 class="h3">Join the team</h3><p class="muted">We hire people who care about the work and the people it is for.</p><span class="link">See open roles</span></div></a>"""
     values = [("Proof over promises", "Every claim we make sits next to a number, a result or a piece of work."),
               ("One team, one idea", "The people who write the strategy stay until the last ad goes live."),
               ("Clear beats clever", "We say things plainly, to clients and to their customers."),
@@ -798,8 +800,7 @@ def about():
 </div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal"><p class="eyebrow">Our team</p><h2 class="h2">The people <span class="serif">behind the match.</span></h2></div>
-  <div class="team-grid team-grid--2">{team_big}</div>
-  <div class="team-grid team-grid--3">{team_rest}</div>
+  <div class="team-grid team-grid--3">{team_cards}</div>
 </div></section>
 {partner_band("")}
 {locations_section("")}
