@@ -595,7 +595,8 @@ def proj(slug):
 
 def brand_mark(p, prefix, cls=""):
     if p["logo"]:
-        return f'<img class="brand-logo {cls}" src="{prefix}assets/logos/{p["logo"] if "." in p["logo"] else p["logo"] + ".png"}" alt="{html.escape(p["brand"])} logo" loading="lazy">'
+        fb = "this.onerror=null;var s=document.createElement('span');s.className='brand-word '+this.className.replace('brand-logo','');s.textContent=this.dataset.brand;this.replaceWith(s)"
+        return f'<img class="brand-logo {cls}" src="/assets/logos/{p["logo"] if "." in p["logo"] else p["logo"] + ".png"}" alt="{html.escape(p["brand"])} logo" data-brand="{html.escape(p["brand"])}" onerror="{fb}">'
     return f'<span class="brand-word {cls}">{p["brand"]}</span>'
 
 def project_card(p, prefix):
