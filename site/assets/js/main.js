@@ -136,14 +136,6 @@
       el.addEventListener("mouseenter", function () { cursor.classList.add("is-hover"); });
       el.addEventListener("mouseleave", function () { cursor.classList.remove("is-hover"); });
     });
-    document.querySelectorAll(".btn").forEach(function (b) {
-      b.addEventListener("mousemove", function (e) {
-        var r = b.getBoundingClientRect();
-        var x = (e.clientX - r.left - r.width / 2) * 0.25, y = (e.clientY - r.top - r.height / 2) * 0.35;
-        b.style.transform = "translate(" + x + "px," + y + "px)";
-      });
-      b.addEventListener("mouseleave", function () { b.style.transform = ""; });
-    });
     document.querySelectorAll(".work-card").forEach(function (c) {
       c.addEventListener("mousemove", function (e) {
         var r = c.getBoundingClientRect();
