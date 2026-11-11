@@ -190,6 +190,42 @@ SERVICES = [
 # cats use the service "art" keys: consulting, strategy, identity, content, social, performance, media
 # by: "wmm" = Whatta Match Media engagement, "nainee" = from Nainee Sohane's earlier roles
 PROJECTS = [
+    dict(slug="bann-thann", brand="Bann Thann", logo=None, sector="Indian menswear", market="Law College Road, Pune", current=True,
+         cats=["strategy", "content", "social", "consulting"], services="Brand voice, local footfall, campaigns, community", by="wmm",
+         card="A quiet arrival for a new menswear store: a brand voice, neighbourhood footfall, four small campaigns and a WhatsApp circle.",
+         title="Not a launch. A neighbourhood that <span class=\"serif\">learns where you are.</span>",
+         lede="Footfall, voice and garment presence for a new Indian menswear store on Law College Road, Pune. Small steps we can prove, before anything loud.",
+         challenge="A new store needed people walking in and knowing where it is, a voice that sounds like Bann Thann and not an ad, and its garments seen properly. All without a launch event, an influencer blitz, paid ads or discounts in month one.",
+         insight="Most men buy Indian wear only when an occasion gives them permission. Give him everyday permission, let the people he trusts vouch for the store, and let him see the name seven times before he walks in.",
+         did=[("A voice in three routes", "The Heart, the Seller and the Finder: \u201cApne liye bhi\u201d, \u201cKapda bolta hai\u201d and \u201cBann Thann\u2019s building\u201d."),
+              ("Footfall, locally", "The address as a landmark, a fixed map pin, and café, barber and doorstep cards, each with its own code word."),
+              ("Four small campaigns", "Diwali, the store\u2019s first month, persona stories and Groom Squad evenings, timed to Pune\u2019s calendar."),
+              ("Community and shoot", "A WhatsApp circle grown like a guest list, and one shoot day planned to feed three months of content.")],
+         outcome="A month-one plan built on small steps the store can prove, with six numbers counted every week, from walk-ins by source to how many visitors say \u201cBann Thann\u2019s building\u201d."),
+    dict(slug="beleader", brand="BeLeader", logo="beleader", sector="Leadership development", market="India", current=True,
+         cats=["consulting", "content"], services="Marketing consultancy, programme communication", by="wmm",
+         card="A marketing system connecting Poornima's expert voice with BeLeader's programmes and the team that runs them.",
+         title="Leadership expertise needs a marketing system <span class=\"serif\">that keeps up.</span>",
+         lede="We connected Poornima's expert voice, BeLeader's programmes and the practical work of marketing execution.",
+         challenge="BeLeader speaks to three audiences: employee leadership, founder transformation and organisational culture. Poornima's personal voice also had to stay distinct from the company's programme communication.",
+         insight="The expert builds trust; the company makes the offer and the next step clear. Giving both the same voice blurs their jobs. A working system gives each one its own role.",
+         did=[("Separate voices", "Poornima's personal brand and BeLeader's company calendar were planned as two distinct streams."),
+              ("Programme relevance", "Content for employee leadership, the Transformation Leadership Program and cultural-audit conversations."),
+              ("Cohort communication", "WhatsApp copy, posters, programme messaging and follow-up scripts for the alumni cohort."),
+              ("Execution clarity", "Deliverables, hiring, coordination and reporting, plus Yashada presentation materials.")],
+         outcome="Programme copy, cohort collateral, presentations and an execution plan now work together, so the team knows what to create, who owns it and how the next conversation is handled."),
+    dict(slug="ava", brand="AVA", logo=None, sector="Restaurant, bar and terrace café", market="Pune", current=True,
+         cats=["identity", "content", "social", "strategy"], services="Experience branding, event creative, daypart planning", by="wmm",
+         card="One terrace, two brands: Sunnyside Social by day and AVA by night, with event creative for AVA\u2019s live-music evenings.",
+         title="One terrace can belong to <span class=\"serif\">every moment of the day.</span>",
+         lede="Experience branding for a terrace that opens as Sunnyside Social for breakfast and becomes AVA in the evening, plus creative for AVA\u2019s Unplugged live-music nights.",
+         challenge="The same space serves breakfast, brunch, working visits and an evening bar. Each moment needed its own reason to visit, and AVA\u2019s live-music nights needed communication that felt like part of the evening.",
+         insight="People choose a place by the moment they are in. Plan the space around its daily rhythm, and even a small tabletop card becomes part of the experience.",
+         did=[("Daypart structure", "A 9 AM breakfast opening, a noon pizza counter and the move into AVA after 7 PM."),
+              ("Experience branding", "Branding, marketing and social for the space, with cross-marketing between Sunnyside Social and AVA."),
+              ("Unplugged nights", "A two-sided 4 \u00d7 6 inch tabletop for Saahil Gohiree and Rahul Jaykar, from 8:30 PM, in AVA\u2019s typography."),
+              ("Content and operations", "Founder interview, skits and weekday kitchen shoots, alongside menu, portions and launch preparation.")],
+         outcome="A space planned around its daily rhythm, with mornings and evenings each given a clear reason to visit and creative that stays consistent from breakfast to the last set."),
     dict(slug="91-cmo", brand="91 CMO", logo=None, sector="Leadership community", market="India",
          cats=["strategy", "identity", "content"], services="Naming, positioning, launch content", by="wmm",
          card="Naming, positioning and launch content for an invitation-only community of CMOs and CX heads.",
@@ -202,18 +238,6 @@ PROJECTS = [
               ("Launch content", "Launch posts, member invitations, a monthly calendar and themes around the hard truths marketing leaders face."),
               ("Experience planning", "Website pillars, community goals and event formats. Tangerine orange and a coming-together idea led the visual direction.")],
          outcome="One proposition runs through the name, identity, invitations and content themes: a reason for senior marketing and CX leaders to take part, and to come back."),
-    dict(slug="beleader", brand="BeLeader", logo="beleader", sector="Leadership development", market="India",
-         cats=["consulting", "content"], services="Marketing consultancy, programme communication", by="wmm",
-         card="A marketing system connecting Poornima's expert voice with BeLeader's programmes and the team that runs them.",
-         title="Leadership expertise needs a marketing system <span class=\"serif\">that keeps up.</span>",
-         lede="We connected Poornima's expert voice, BeLeader's programmes and the practical work of marketing execution.",
-         challenge="BeLeader speaks to three audiences: employee leadership, founder transformation and organisational culture. Poornima's personal voice also had to stay distinct from the company's programme communication.",
-         insight="The expert builds trust; the company makes the offer and the next step clear. Giving both the same voice blurs their jobs. A working system gives each one its own role.",
-         did=[("Separate voices", "Poornima's personal brand and BeLeader's company calendar were planned as two distinct streams."),
-              ("Programme relevance", "Content for employee leadership, the Transformation Leadership Program and cultural-audit conversations."),
-              ("Cohort communication", "WhatsApp copy, posters, programme messaging and follow-up scripts for the alumni cohort."),
-              ("Execution clarity", "Deliverables, hiring, coordination and reporting, plus Yashada presentation materials.")],
-         outcome="Programme copy, cohort collateral, presentations and an execution plan now work together, so the team knows what to create, who owns it and how the next conversation is handled."),
     dict(slug="sasp-advisors", brand="SASP Advisors LLP", logo="sasp", sector="Financial advisory", market="India",
          cats=["content", "social", "strategy"], services="Company narrative, partner personal branding", by="wmm",
          card="One firm voice and three expert voices: company narrative, partner content calendars and a Budget 2025 workstream.",
@@ -262,18 +286,6 @@ PROJECTS = [
               ("Product questions", "The purchase occasion, who forms the group, what makes people accept and where it gets difficult."),
               ("Tests before spend", "Market-specific proposition tests, a group-offer explainer and an invitation-flow prototype.")],
          outcome="A research and go-to-market plan that tests the group journey in each market before committing acquisition budget."),
-    dict(slug="bann-thann-ke", brand="Bann Thann Ke", logo=None, sector="Retail fashion", market="Pune",
-         cats=["consulting", "content", "social"], services="Launch strategy, integrated content", by="wmm",
-         card="A short-timeline store launch bringing social content, WhatsApp, word of mouth and the space itself together.",
-         title="A store launch needs reasons to visit, <span class=\"serif\">not just to follow.</span>",
-         lede="A short-timeline retail launch planned across social content and local discovery.",
-         challenge="The launch date was 21 October 2026 and preparation time was short. The plan had to go beyond a feed: word of mouth, WhatsApp, product placement and the store's community space.",
-         insight="A post can introduce a brand, but a retail decision needs a reason to come in. Linking the product story to a local occasion makes social content lead to the door.",
-         did=[("Consulting first", "Business and marketing direction set before choosing activities."),
-              ("Launch collateral", "A launch-carousel concept and quotation materials."),
-              ("Content scope", "Static posts, carousels, stories, reels and dedicated content writing."),
-              ("Integrated channels", "Product placement, word of mouth, WhatsApp and community-space use alongside social.")],
-         outcome="Social discovery and the in-store experience planned as one journey, giving local audiences a reason to step inside."),
     dict(slug="blend-studioo", brand="Blend Studioo", logo="blend-studioo", sector="Salon", market="Baner, Pune",
          cats=["identity", "strategy"], services="Logo, brand philosophy, pre-launch campaign", by="wmm",
          card="Logo, brand philosophy and a pre-launch campaign for a new salon earning its first appointments.",
@@ -335,7 +347,7 @@ PROJECTS = [
               ("Message structure", "Problem, approach, then a clear path to register.")],
          outcome="Workshop promotion that makes the learning visible before the booking, run end to end from idea to posting."),
 ]
-HOME_PROJECTS = ["91-cmo", "beleader", "sasp-advisors", "tradesabha", "flockngo", "mood-drums"]
+HOME_PROJECTS = ["bann-thann", "beleader", "ava", "91-cmo", "sasp-advisors", "tradesabha"]
 
 # Agency client logos (from the Brand Logo Catalogue; Whatta Match Media was formerly BANO Digital)
 LOGO_WALL = [("bridgestone", "Bridgestone"), ("michelin", "Michelin"), ("emaar", "Emaar"), ("damac", "DAMAC"),
@@ -367,7 +379,7 @@ LOCATIONS = [
     dict(city="Pune", country="India", role="Headquarters", tz="Asia/Kolkata", tzl="IST · GMT+5:30",
          addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=730, y=187.3),
     dict(city="Dubai", country="UAE", role="Middle East", tz="Asia/Dubai", tzl="GST · GMT+4",
-         addr="Address to be confirmed", x=674.9, y=164.9),
+         addr="Rabella Building, A-Block, Hor Al Anz East, Deira, Dubai", x=674.9, y=164.9),
     dict(city="London", country="United Kingdom", role="Europe", tz="Europe/London", tzl="GMT / BST",
          addr="Through our global partner DREO Digital", x=519.7, y=77.3),
 ]
@@ -562,7 +574,7 @@ def write(path, content):
 def redirects():
     """Explicit rules so /contact, /services/brand-strategy etc. load the right file.
     No catch-all: Netlify serves 404.html for anything else on its own."""
-    lines = ["# Clean URLs -> files (generated by build.py)", "/work/case-study  /work  301", "/work/case-study.html  /work  301"]
+    lines = ["# Clean URLs -> files (generated by build.py)", "/work/case-study  /work  301", "/work/case-study.html  /work  301", "/work/bann-thann-ke  /work/bann-thann  301", "/work/bann-thann-ke.html  /work/bann-thann  301"]
     for p in sorted(PAGES_WRITTEN):
         if p == "index.html":
             continue
@@ -585,6 +597,8 @@ def brand_mark(p, prefix, cls=""):
 
 def project_card(p, prefix):
     origin = '<span class="origin">Founder\'s earlier role</span>' if p["by"] == "nainee" else ""
+    if p.get("current"):
+        origin += '<span class="badge-current">Current client</span>'
     return f"""<a class="work-card project reveal" data-cat="{' '.join(p['cats'])}" href="{prefix}work/{p['slug']}.html">
       <span class="tag">{p['sector']} · {p['market']}</span>
       <div class="art">{brand_mark(p, prefix)}</div>
@@ -676,7 +690,18 @@ VIZ = {
                       cols=[("India", ["Own market research", "Own proposition test", "Group-offer explainer"]),
                             ("USA", ["Own market research", "Own proposition test", "Invitation-flow prototype"])],
                       middle=["Purchase occasion", "Who forms the group", "Why people accept", "Where coordination breaks"])],
-    "bann-thann-ke": [dict(type="flow", eyebrow="The launch journey", title="From discovery to a store visit",
+    "bann-thann": [dict(type="tiles", eyebrow="The voice", title="Three voices, each with one job",
+                        tiles=[("Apne liye bhi.", "The Heart: captions, invitations, the fitting room"), ("Kapda bolta hai.", "The Seller: product posts, swing tags, the catalogue"),
+                               ("Bann Thann\u2019s building.", "The Finder: café cards, Maps, WhatsApp sign-offs")]),
+                   dict(type="flow", eyebrow="The customer journey", title="From \u201cwhere is it?\u201d to \u201cI\u2019ll take this one\u201d",
+                        steps=[("Awareness", "Remove the friction: one correct pin, the building as a landmark"), ("Consideration", "Let others vouch: parents\u2019 circles, real men, not stock models"), ("Conversion", "Honest scarcity: small named print runs, two squad evenings a week")]),
+                   dict(type="flow", eyebrow="The calendar", title="Four small campaigns, timed to Pune\u2019s calendar",
+                        steps=[("Diwali", "1\u201310 Nov \u00b7 Ek apne liye"), ("Naya Ghar", "The store\u2019s first month"), ("Persona stories", "From 12 Nov, one man a fortnight"), ("Groom Squad", "20 Nov to mid-Dec")])],
+    "ava": [dict(type="flow", eyebrow="The daily rhythm", title="One space, different moments",
+                 steps=[("9 AM", "Breakfast at Sunnyside Social"), ("Noon", "The pizza counter opens"), ("Afternoon", "Brunch and working visits"), ("7 PM", "The terrace becomes AVA"), ("8:30 PM", "Unplugged live music")]),
+            dict(type="tiles", eyebrow="The Unplugged tabletop", title="A small format with a clear order",
+                 tiles=[("4 \u00d7 6", "Inch, two-sided tabletop"), ("2", "Artists, one on each side"), ("8:30 PM", "Onwards, both nights"), ("1", "Event identity across both sides")])],
+    "bann-thann-ke-old": [dict(type="flow", eyebrow="The launch journey", title="From discovery to a store visit",
                            steps=[("Product story", "Launch carousel"), ("Social", "Posts, stories, reels"), ("WhatsApp", "And word of mouth"), ("In store", "Product placement"), ("Community space", "A reason to visit")]),
                       dict(type="stat", value="21 Oct", label="Launch date, 2026", note="Planned on a short timeline.")],
     "blend-studioo": [dict(type="flow", eyebrow="The first-appointment path", title="From first impression to first booking",
@@ -939,7 +964,7 @@ def case_study():
                    "about": p["brand"], "creator": {"@type": "Organization", "name": "Whatta Match Media"}, "url": f'{DOMAIN}/work/{p["slug"]}.html'}]
         body = header("work.html", d) + f"""<main id="main">
 <section class="page-hero">{hero_line("wm-cs")}<div class="wrap">
-  <p class="eyebrow">Case study · {p["sector"]}</p>
+  <p class="eyebrow">{"Current client" if p.get("current") else "Case study"} · {p["sector"]}</p>
   <h1 class="h1" style="max-width:20ch">{p["title"]}</h1>
   <p class="lede">{p["lede"]}</p>
 </div></section>

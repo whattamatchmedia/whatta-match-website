@@ -647,3 +647,7 @@ main { position: relative; z-index: 2; }
 .team-head .h3 { color: var(--amber); }
 .loc-map text { paint-order: stroke; stroke: #0E1D38; stroke-width: 7px; stroke-linejoin: round; }
 .loc-map .role { font-weight: 600; fill: #FFA866; }
+.work-card.project .card-foot { position: static; }
+.badge-current { position: absolute; top: 18px; right: 18px; font: 600 11px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-deep); background: var(--wave); padding: 6px 10px; border-radius: 999px; }
+.work-card.project .tag { padding-right: 130px; }
+.viz-tiles { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
