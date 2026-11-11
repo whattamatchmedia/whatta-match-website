@@ -214,7 +214,7 @@ PROJECTS = [
               ("Cohort communication", "WhatsApp copy, posters, programme messaging and follow-up scripts for the alumni cohort."),
               ("Execution clarity", "Deliverables, hiring, coordination and reporting, plus Yashada presentation materials.")],
          outcome="Programme copy, cohort collateral, presentations and an execution plan now work together, so the team knows what to create, who owns it and how the next conversation is handled."),
-    dict(slug="ava", brand="AVA", logo=None, sector="Restaurant, bar and terrace café", market="Pune", current=True,
+    dict(slug="ava", brand="AVA", logo="ava", sector="Restaurant, bar and terrace café", market="Pune", current=True,
          cats=["identity", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
          card="Building and growing AVA and Sunnyside Social: brand, social media we grow and manage, event creative and the marketing strategy for every part of the day.",
          title="One terrace can belong to <span class=\"serif\">every moment of the day.</span>",
