@@ -358,7 +358,7 @@ TEAM = [
          bio="UK-based consulting leader with 22+ years leading enterprise and digital transformation programmes. He builds our client relationships in the UK and Europe."),
     dict(name="Supriya Joshi", role="Technical Head", photo="supriya", li="https://www.linkedin.com/in/supriyaj46/",
          bio="20+ years across technology, product and digital businesses in fintech, healthcare, travel and enterprise tech. She leads the technology behind our websites, platforms and AI-enabled work."),
-    dict(name="Uwais Ahmad", role="Creative Head", photo=None, li="https://www.linkedin.com/in/uwaisahmad/",
+    dict(name="Uwais Ahmad", role="Creative Head", photo="uwais", li="https://www.linkedin.com/in/uwaisahmad/",
          bio="Mumbai-based director and producer, and founder of The Brain Freez 10. Since 2014 he has made brand, product and corporate films in live action and animation across India, the UAE and Europe."),
 ]
 FOUNDERS = [(t["name"], t["role"]) for t in TEAM[:2]]
