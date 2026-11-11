@@ -365,11 +365,11 @@ FOUNDERS = [(t["name"], t["role"]) for t in TEAM[:2]]
 
 LOCATIONS = [
     dict(city="Pune", country="India", role="Headquarters", tz="Asia/Kolkata", tzl="IST · GMT+5:30",
-         addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=940, y=196),
+         addr="Gera's Imperium Rise, Hinjewadi Phase II, Rajiv Gandhi Infotech Park, Pune 411057", x=730, y=187.3),
     dict(city="Dubai", country="UAE", role="Middle East", tz="Asia/Dubai", tzl="GST · GMT+4",
-         addr="Address to be confirmed", x=720, y=160),
+         addr="Address to be confirmed", x=674.9, y=164.9),
     dict(city="London", country="United Kingdom", role="Europe", tz="Europe/London", tzl="GMT / BST",
-         addr="Through our global partner DREO Digital", x=110, y=60),
+         addr="Through our global partner DREO Digital", x=519.7, y=77.3),
 ]
 
 ARTICLES = [
@@ -596,12 +596,11 @@ def work_filter(projects):
     return "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">{n}</button>' for k, n in btns)
 
 def logo_wall(prefix):
-    imgs = "".join(f'<li><img src="{prefix}assets/logos/{s}.png" alt="{html.escape(n)}" loading="lazy"></li>' for s, n in LOGO_WALL)
-    dup = "".join(f'<li aria-hidden="true"><img src="{prefix}assets/logos/{s}.png" alt="" loading="lazy"></li>' for s, n in LOGO_WALL)
+    cells = "".join(f'<li><img src="{prefix}assets/logos/{s}.png" alt="{html.escape(n)}" loading="lazy"></li>' for s, n in LOGO_WALL)
     return f"""<section class="sec logos" aria-labelledby="logos-h">
-  <div class="wrap"><div class="sec-head sec-head--row reveal"><div><p class="eyebrow">Brands we have worked with</p>
-    <h2 class="h2" id="logos-h">Trusted by names <span class="serif">you know.</span></h2></div></div></div>
-  <div class="marquee"><ul class="marquee-track">{imgs}{dup}</ul></div>
+  <div class="wrap"><div class="sec-head reveal"><p class="eyebrow">Brands we have worked with</p>
+    <h2 class="h2" id="logos-h">Trusted by names <span class="serif">you know.</span></h2></div>
+  <ul class="logo-grid reveal">{cells}</ul></div>
 </section>
 """
 
@@ -611,22 +610,19 @@ def locations_section(prefix):
     def arc(a, b, lift):
         mx, my = (a["x"] + b["x"]) / 2, min(a["y"], b["y"]) - lift
         return f'M{a["x"]},{a["y"]} Q{mx},{my} {b["x"]},{b["y"]}'
-    tz_lines = "".join(f'<line x1="{c["x"]}" y1="14" x2="{c["x"]}" y2="262" class="tz"/><text x="{c["x"]}" y="290" class="tzl">{c["tzl"]}</text>' for c in L)
-    anchor = {"London": ("start", 0), "Dubai": ("middle", 0), "Pune": ("middle", 0)}
-    nodes = "".join(f"""<g class="node"><circle cx="{c['x']}" cy="{c['y']}" r="22" class="pulse" style="animation-delay:{i * .6}s"/><circle cx="{c['x']}" cy="{c['y']}" r="8" fill="url(#locg)"/>
-      <text x="{c['x'] - (14 if c['city'] == 'London' else 0)}" y="{c['y'] + 42}" text-anchor="{anchor[c['city']][0]}" class="city">{c['city']}</text>
-      <text x="{c['x'] - (14 if c['city'] == 'London' else 0)}" y="{c['y'] + 62}" text-anchor="{anchor[c['city']][0]}" class="role">{c['role'].upper()}</text></g>""" for i, c in enumerate(L))
-    svg = f"""<svg class="loc-map" viewBox="0 0 1040 300" role="img" aria-label="Map of Whatta Match Media locations: London, Dubai and Pune, connected across three time zones">
-  <defs><linearGradient id="locg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FF5F1F"/></linearGradient>
-  <pattern id="locdots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="rgba(243,238,228,.16)"/></pattern></defs>
-  <rect width="1040" height="270" fill="url(#locdots)" rx="18"/>
-  {tz_lines}
-  <path d="{arc(lon, dub, 60)}" class="route"/><path d="{arc(dub, pun, 50)}" class="route" style="animation-delay:.8s"/><path d="{arc(lon, pun, 110)}" class="route route--long" style="animation-delay:1.6s"/>
+    lab = {"London": ("end", -16, -18), "Dubai": ("end", -16, 30), "Pune": ("start", 16, 30)}
+    nodes = "".join(f"""<g class="node"><circle cx="{c['x']}" cy="{c['y']}" r="20" class="pulse" style="animation-delay:{i * .6}s"/><circle cx="{c['x']}" cy="{c['y']}" r="6.5" fill="url(#locg)" stroke="#0E1D38" stroke-width="2"/>
+      <text x="{c['x'] + lab[c['city']][1]}" y="{c['y'] + lab[c['city']][2]}" text-anchor="{lab[c['city']][0]}" class="city">{c['city']}</text>
+      <text x="{c['x'] + lab[c['city']][1]}" y="{c['y'] + lab[c['city']][2] + 17}" text-anchor="{lab[c['city']][0]}" class="role">{c['role'].upper()}</text></g>""" for i, c in enumerate(L))
+    svg = f"""<svg class="loc-map" viewBox="0 0 1040 436" role="img" aria-label="World map showing Whatta Match Media in London, Dubai and Pune">
+  <defs><linearGradient id="locg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FF5F1F"/></linearGradient></defs>
+  <image href="{prefix}assets/img/world-dots.svg" x="0" y="0" width="1040" height="436"/>
+  <path d="{arc(lon, dub, 70)}" class="route"/><path d="{arc(dub, pun, 26)}" class="route" style="animation-delay:.8s"/><path d="{arc(lon, pun, 120)}" class="route route--long" style="animation-delay:1.6s"/>
   {nodes}
 </svg>"""
     cards = "".join(f"""<div class="card loc-card reveal"><p class="mono" style="color:var(--amber)">0{i + 1} · {c['role']}</p>
       <h3 class="h3">{c['city']}<span class="muted" style="font-weight:500">, {c['country']}</span></h3>
-      <p>{c['addr'] if c['city'] != 'London' else 'Through our global partner <a class="link" href="' + PARTNER['url'] + '" rel="noopener" target="_blank">DREO Digital</a>'}</p>
+      <p class="loc-addr">{c['addr'] if c['city'] != 'London' else 'Through our global partner <a class="link" href="' + PARTNER['url'] + '" rel="noopener" target="_blank">DREO Digital</a>'}</p>
       <p class="clock"><span data-tz="{c['tz']}">--:--</span><span class="mono muted">{c['tzl']}</span></p></div>""" for i, c in enumerate(L))
     return f"""<section class="sec locations" id="locations" aria-labelledby="loc-h">
   <div class="wrap">
@@ -650,15 +646,100 @@ def partner_band(prefix):
 
 def portrait(t, prefix):
     if t["photo"]:
-        return f"""<figure class="portrait-lg"><img src="{prefix}assets/team/{t['photo']}-duo.webp" alt="{t['name']}, {t['role']}" loading="lazy" width="640" height="800">
-        <img class="colour" src="{prefix}assets/team/{t['photo']}.webp" alt="" aria-hidden="true" loading="lazy" width="640" height="800"></figure>"""
+        return f"""<figure class="portrait-c"><img src="{prefix}assets/team/{t['photo']}-duo.webp" alt="{t['name']}, {t['role']}" loading="lazy" width="600" height="600">
+        <img class="colour" src="{prefix}assets/team/{t['photo']}.webp" alt="" aria-hidden="true" loading="lazy" width="600" height="600"></figure>"""
     ini = "".join(w[0] for w in t["name"].split())
-    return f'<figure class="portrait-lg portrait-lg--mono" role="img" aria-label="{t["name"]}"><span>{ini}</span></figure>'
+    return f'<figure class="portrait-c portrait-c--mono" role="img" aria-label="{t["name"]}"><span>{ini}</span></figure>'
 
 def team_card(t, prefix, big=False):
-    return f"""<article class="team-card{' team-card--big' if big else ''} reveal">{portrait(t, prefix)}
-      <div class="team-body"><h3 class="h3">{t['name']}</h3><p class="mono" style="color:var(--sky)">{t['role']}</p>
-      <p class="muted">{t['bio']}</p><a class="link" href="{t['li']}" rel="noopener" target="_blank">LinkedIn</a></div></article>"""
+    return f"""<article class="team-card{' team-card--big' if big else ''} reveal"><div class="team-head">{portrait(t, prefix)}
+      <div><h3 class="h3">{t['name']}</h3><p class="mono" style="color:var(--sky)">{t['role']}</p><a class="link" href="{t['li']}" rel="noopener" target="_blank">LinkedIn</a></div></div>
+      <p class="muted team-bio">{t['bio']}</p></article>"""
+
+# ---------- Case-study infographics (content comes only from the case-study documents) ----------
+VIZ = {
+    "91-cmo": [dict(type="tiles", eyebrow="The proposition", title="How the name and the invitation fit together",
+                    tiles=[("+91", "India's calling code: the community's home market"), ("CMO", "Built for CMOs and CX heads"),
+                           ("No 'Club'", "Dropped to keep the leadership purpose in view"), ("Invite-only", "An independent community, not a sales channel")])],
+    "beleader": [dict(type="hub", eyebrow="The system", title="One marketing system, distinct voices", center=("BeLeader", "programmes"),
+                      nodes=["Poornima's expert voice", "Employee leadership", "Transformation Leadership", "Cultural audits", "Alumni cohort", "Execution and reporting"])],
+    "sasp-advisors": [dict(type="hub", eyebrow="The structure", title="Three expert voices around one firm", center=("SASP Advisors", "one firm voice"),
+                           nodes=["CA Pratik Karpe", "CA Jayesh Meena", "CA Sanket Alawani", "Budget 2025 content", "Service explainers", "Company profile"])],
+    "tradesabha": [dict(type="flow", eyebrow="The growth path", title="From discovery to a trading connection",
+                        steps=[("Search", "Category pages"), ("Onboarding", "Supplier guide"), ("Expo", "In-person discovery"), ("Demo", "Expo-to-demo follow-up"), ("Connection", "Trade between members")]),
+                   dict(type="stat", value="1,000", label="Supplier onboardings planned for", note="A planning target, not a reported result.")],
+    "mood-drums": [dict(type="hub", eyebrow="The campaign", title="Everything points to a weekday visit", center=("Weekday", "occasions"),
+                        nodes=["DJ and music community", "Influencer plan", "Weekly reels", "Static content", "Food and drinks", "Campaign calendar"])],
+    "flockngo": [dict(type="split", eyebrow="The research design", title="Two markets, tested separately",
+                      cols=[("India", ["Own market research", "Own proposition test", "Group-offer explainer"]),
+                            ("USA", ["Own market research", "Own proposition test", "Invitation-flow prototype"])],
+                      middle=["Purchase occasion", "Who forms the group", "Why people accept", "Where coordination breaks"])],
+    "bann-thann-ke": [dict(type="flow", eyebrow="The launch journey", title="From discovery to a store visit",
+                           steps=[("Product story", "Launch carousel"), ("Social", "Posts, stories, reels"), ("WhatsApp", "And word of mouth"), ("In store", "Product placement"), ("Community space", "A reason to visit")]),
+                      dict(type="stat", value="21 Oct", label="Launch date, 2026", note="Planned on a short timeline.")],
+    "blend-studioo": [dict(type="flow", eyebrow="The first-appointment path", title="From first impression to first booking",
+                           steps=[("Identity", "Logo and philosophy"), ("Pre-launch", "Baner, Pune"), ("Stylists", "Introductions"), ("Services", "Previews"), ("Booking", "Clear enquiry path")])],
+    "nincasa": [dict(type="tiles", eyebrow="The method", title="Analysis before positioning",
+                     tiles=[("SWOT", "Strengths, weaknesses, opportunities, threats"), ("PESTLE", "The wider business environment"),
+                            ("STP", "Segments, priorities and positioning"), ("Plan", "One priority occasion to own")])],
+    "asian-business-connexions": [dict(type="hub", eyebrow="The campaign", title="One platform across every channel", center=("Inclusion", "By Default"),
+                                       nodes=["LinkedIn", "Facebook", "Instagram", "Newsletter", "Radio show", "Awards Dinner 2024"])],
+    "pooja-wakharkar": [dict(type="hub", eyebrow="Content territories", title="Everyday tensions the audience already knows", center=("The Guilt", "of Resting"),
+                             nodes=["Burnout", "Loneliness", "Emotional masking", "Constant positivity", "Tone guide", "Hashtag framework"])],
+    "bunty-prashant-studio": [dict(type="flow", eyebrow="The message", title="How each workshop is promoted",
+                                   steps=[("Problem", "A learning gap people recognise"), ("Approach", "The facilitator's method"), ("Details", "Dates and format"), ("Register", "One clear step")]),
+                              dict(type="flow", eyebrow="The production line", title="From idea to posted",
+                                   steps=[("Ideas", "Campaign thinking"), ("Scripts", "Reels and promos"), ("Edit", "Editor coordination"), ("Publish", "Scheduling, posts, stories")])],
+}
+
+def viz_hub(v, gid):
+    W, H, cx, cy = 1040, 440, 520, 220
+    import math
+    n = len(v["nodes"])
+    pos = [(cx + 380 * math.cos(math.pi * (-0.5 + 2 * i / n) + math.pi / n), cy + 160 * math.sin(math.pi * (-0.5 + 2 * i / n) + math.pi / n)) for i in range(n)]
+    lines = "".join(f'<line x1="{cx}" y1="{cy}" x2="{x:.0f}" y2="{y:.0f}" class="hub-line" style="animation-delay:{i * .15}s"/>' for i, (x, y) in enumerate(pos))
+    pills = "".join(f'<g class="hub-node"><rect x="{x - 112:.0f}" y="{y - 24:.0f}" width="224" height="48" rx="24"/><text x="{x:.0f}" y="{y + 5:.0f}">{html.escape(t)}</text></g>' for (x, y), t in zip(pos, v["nodes"]))
+    c1, c2 = v["center"]
+    svg = f"""<svg class="viz-hub" viewBox="0 0 {W} {H}" role="img" aria-label="{html.escape(v['title'])}">
+  <defs><linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FF5F1F"/></linearGradient></defs>
+  {lines}<circle cx="{cx}" cy="{cy}" r="92" fill="url(#{gid})"/><circle cx="{cx}" cy="{cy}" r="112" class="hub-ring"/>
+  <text x="{cx}" y="{cy - 4}" class="hub-c1">{html.escape(c1)}</text><text x="{cx}" y="{cy + 22}" class="hub-c2">{html.escape(c2)}</text>{pills}</svg>"""
+    lst = "".join(f"<li>{html.escape(t)}</li>" for t in v["nodes"])
+    return svg + f'<div class="viz-hub-list"><p class="hub-center">{html.escape(c1)} <span>{html.escape(c2)}</span></p><ul>{lst}</ul></div>'
+
+def viz_flow(v, gid):
+    steps = "".join(f'<li><span class="flow-dot">{i + 1:02d}</span><b>{html.escape(a)}</b><span class="muted">{html.escape(b)}</span></li>' for i, (a, b) in enumerate(v["steps"]))
+    return f'<ol class="viz-flow" style="--n:{len(v["steps"])}">{steps}</ol>'
+
+def viz_tiles(v, gid):
+    t = "".join(f'<div class="tile"><b>{html.escape(a)}</b><span>{html.escape(b)}</span></div>' for a, b in v["tiles"])
+    return f'<div class="viz-tiles">{t}</div>'
+
+def viz_split(v, gid):
+    cols = [f'<div class="split-col"><b class="split-head">{h}</b><ul>' + "".join(f"<li>{html.escape(x)}</li>" for x in items) + "</ul></div>" for h, items in v["cols"]]
+    mid = '<div class="split-mid"><span class="mono">Shared questions</span><ul>' + "".join(f"<li>{html.escape(x)}</li>" for x in v["middle"]) + "</ul></div>"
+    return f'<div class="viz-split">{cols[0]}{mid}{cols[1]}</div>'
+
+def viz_stat(v, gid):
+    return f'<div class="viz-stat"><b>{v["value"]}</b><div><p class="lede" style="margin:0">{v["label"]}</p><p class="mono muted" style="margin:8px 0 0">{v["note"]}</p></div></div>'
+
+def render_viz(p):
+    out = []
+    for j, v in enumerate(VIZ.get(p["slug"], [])):
+        fn = {"hub": viz_hub, "flow": viz_flow, "tiles": viz_tiles, "split": viz_split, "stat": viz_stat}[v["type"]]
+        body = fn(v, f'vz-{p["slug"]}-{j}')
+        head = "" if v["type"] == "stat" else f'<figcaption><p class="eyebrow">{v["eyebrow"]}</p><h2 class="h3">{v["title"]}</h2></figcaption>'
+        out.append(f'<figure class="viz viz--{v["type"]} reveal">{head}{body}</figure>')
+    return "".join(out)
+
+def cs_panel(p, i):
+    icons = "".join(f'<span class="cs-icon" title="{SVC_NAME[c]}">{art(c, f"csi-{p["slug"]}-{c}") if c != "consulting" else art("strategy", f"csi-{p["slug"]}-c")}<em>{SVC_NAME[c]}</em></span>' for c in p["cats"])
+    chips = "".join(f"<li>{html.escape(t)}</li>" for t, _ in p["did"])
+    return f"""<div class="cs-hero reveal">
+    <div class="cs-hero-mark">{brand_mark(p, "../", "brand-logo--xl")}</div>
+    <div class="cs-hero-side"><p class="mono" style="color:var(--amber)">What we delivered</p><ul class="cs-chips">{chips}</ul>
+      <div class="cs-icons">{icons}</div></div>
+    {wave_mark("cs-wave", "csw" + str(i))}</div>"""
 
 def home():
     d = 0
@@ -794,9 +875,8 @@ def service_page(i, s):
 # ---------- About ----------
 def about():
     d = 0
-    team_cards = "".join(team_card(t, "") for t in TEAM) + """<a class="team-card team-join reveal" href="careers.html">
-      <div class="team-join-art" aria-hidden="true">+</div>
-      <div class="team-body"><h3 class="h3">Join the team</h3><p class="muted">We hire people who care about the work and the people it is for.</p><span class="link">See open roles</span></div></a>"""
+    team_top = "".join(team_card(t, "", True) for t in TEAM[:2])
+    team_bottom = "".join(team_card(t, "") for t in TEAM[2:])
     values = [("Proof over promises", "Every claim we make sits next to a number, a result or a piece of work."),
               ("One team, one idea", "The people who write the strategy stay until the last ad goes live."),
               ("Clear beats clever", "We say things plainly, to clients and to their customers."),
@@ -815,7 +895,8 @@ def about():
 </div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal"><p class="eyebrow">Our team</p><h2 class="h2">The people <span class="serif">behind the match.</span></h2></div>
-  <div class="team-grid team-grid--3">{team_cards}</div>
+  <div class="team-grid team-grid--2">{team_top}</div>
+  <div class="team-grid team-grid--3">{team_bottom}</div>
 </div></section>
 {partner_band("")}
 {locations_section("")}
@@ -849,7 +930,7 @@ def case_study():
     n = len(PROJECTS)
     for i, p in enumerate(PROJECTS):
         nxt = PROJECTS[(i + 1) % n]
-        did = "".join(f'<div class="card reveal"><span class="mono" style="color:var(--amber)">0{j + 1}</span><h3>{t}</h3><p>{x}</p></div>' for j, (t, x) in enumerate(p["did"]))
+        did = "".join(f'<li><span class="did-dot">0{j + 1}</span><h3>{t}</h3><p>{x}</p></li>' for j, (t, x) in enumerate(p["did"]))
         svcs = ", ".join(SVC_NAME[c] for c in p["cats"])
         by = "Whatta Match Media" if p["by"] == "wmm" else "Nainee Sohane, in an earlier role"
         schema = [{"@context": "https://schema.org", "@type": "CreativeWork", "name": f'{p["brand"]} case study',
@@ -861,30 +942,25 @@ def case_study():
   <p class="lede">{p["lede"]}</p>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="cs-hero reveal"><div class="cs-hero-mark">{brand_mark(p, "../", "brand-logo--xl")}</div>{wave_mark("cs-wave", "csw" + str(i))}</div>
-  <div class="meta-row" style="margin-top:36px">
+  {cs_panel(p, i)}
+  <div class="meta-row" style="margin-top:28px">
     <div><span class="mono muted">Client</span><strong>{p["brand"]}</strong></div>
     <div><span class="mono muted">Category</span><strong>{p["sector"]}</strong></div>
     <div><span class="mono muted">Market</span><strong>{p["market"]}</strong></div>
-    <div><span class="mono muted">Disciplines</span><strong>{svcs}</strong></div>
     <div><span class="mono muted">Delivered by</span><strong>{by}</strong></div>
   </div>
 </div></section>
-<section class="sec"><div class="wrap grid-2">
-  <div><p class="eyebrow">The challenge</p><h2 class="h2">What stood <span class="serif">in the way.</span></h2></div>
-  <p class="lede" style="align-self:end">{p["challenge"]}</p>
-</div></section>
-<section class="sec"><div class="wrap grid-2">
-  <div><p class="eyebrow">The insight</p><h2 class="h2">The match <span class="serif">we found.</span></h2></div>
-  <p class="lede" style="align-self:end">{p["insight"]}</p>
+<section class="sec"><div class="wrap viz-stack">{render_viz(p)}</div></section>
+<section class="sec"><div class="wrap cs-ci">
+  <div class="card reveal"><p class="eyebrow">The challenge</p><h2 class="h3">What stood in the way</h2><p>{p["challenge"]}</p></div>
+  <div class="card card--accent reveal"><p class="eyebrow">The insight</p><h2 class="h3">The match we found</h2><p>{p["insight"]}</p></div>
 </div></section>
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal"><p class="eyebrow">What we did</p><h2 class="h2">{p["services"]}</h2></div>
-  <div class="grid-2">{did}</div>
+  <ol class="did-line reveal">{did}</ol>
 </div></section>
 <section class="sec"><div class="wrap">
-  <div class="sec-head reveal"><p class="eyebrow">The outcome</p></div>
-  <blockquote class="quote reveal">{p["outcome"]}</blockquote>
+  <div class="outcome reveal"><p class="eyebrow">The outcome</p><blockquote class="quote">{p["outcome"]}</blockquote></div>
 </div></section>
 <section class="sec"><div class="wrap">
   <a class="next-project reveal" href="{nxt["slug"]}.html"><span class="mono muted">Next project</span>
