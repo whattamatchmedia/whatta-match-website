@@ -190,7 +190,7 @@ SERVICES = [
 # cats use the service "art" keys: consulting, strategy, identity, content, social, performance, media
 # by: "wmm" = Whatta Match Media engagement, "nainee" = from Nainee Sohane's earlier roles
 PROJECTS = [
-    dict(slug="bann-thann", brand="Bann Thann", logo=None, sector="Indian menswear", market="Law College Road, Pune", current=True,
+    dict(slug="bann-thann", brand="Bann Thann", logo="bann-thann.svg", sector="Indian menswear", market="Law College Road, Pune", current=True,
          cats=["identity", "strategy", "content", "social"], services="Brand building, social media management, marketing strategy", by="wmm",
          card="Building a new menswear brand from its first month: we grow and manage its social media and run the marketing strategy behind the store\u2019s footfall.",
          title="Not a launch. A neighbourhood that <span class=\"serif\">learns where you are.</span>",
@@ -592,7 +592,7 @@ def proj(slug):
 
 def brand_mark(p, prefix, cls=""):
     if p["logo"]:
-        return f'<img class="brand-logo {cls}" src="{prefix}assets/logos/{p["logo"]}.png" alt="{html.escape(p["brand"])} logo" loading="lazy">'
+        return f'<img class="brand-logo {cls}" src="{prefix}assets/logos/{p["logo"] if "." in p["logo"] else p["logo"] + ".png"}" alt="{html.escape(p["brand"])} logo" loading="lazy">'
     return f'<span class="brand-word {cls}">{p["brand"]}</span>'
 
 def project_card(p, prefix):
