@@ -535,9 +535,24 @@ def clean_urls(text):
         return f'{attr}="{path}"'
     return re.sub(r'(href|data-next)="((?:\.\./|/)?(?:[\w-]+/)*[\w-]+)\.html"', rel, text)
 
+import hashlib
+_HASHES = {}
+def asset_version(text):
+    """Add ?v=<content hash> to local asset links so long-cached files refresh when they change."""
+    def rep(m):
+        attr, pre, rel = m.group(1), m.group(2), m.group(3)
+        fp = os.path.join(SITE, "assets", rel)
+        if fp not in _HASHES:
+            _HASHES[fp] = hashlib.md5(open(fp, "rb").read()).hexdigest()[:8] if os.path.isfile(fp) else None
+        h = _HASHES[fp]
+        return f'{attr}="{pre}assets/{rel}' + (f'?v={h}"' if h else '"')
+    return re.sub(r'(src|href)="((?:\.\./)*|/)?assets/([^"?#]+\.(?:css|js|webp|png|svg|jpg))"', lambda m: rep(m) if m.group(2) is not None else rep(m), text)
+
 def write(path, content):
     full = os.path.join(SITE, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
+    if path.endswith(".html"):
+        content = asset_version(content)
     if path.endswith((".html", ".xml", ".txt")):
         content = clean_urls(content)
     if path.endswith(".html") and path != "404.html":
