@@ -627,3 +627,9 @@ main { position: relative; z-index: 2; }
 @media (max-width: 620px) { .logo-grid li { height: 78px; } .logo-grid img { max-height: 38px; } }
 .work-card.project { aspect-ratio: auto; min-height: 0; }
 .viz-tiles b { font-size: clamp(24px, 2.3vw, 34px); }
+@media (max-width: 1000px) {
+  .team-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .team-grid--3 .team-head { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .team-grid--3 .team-bio { font-size: 14px; }
+}
+@media (max-width: 680px) { .team-grid--2, .team-grid--3 { grid-template-columns: minmax(0,1fr); } .team-grid--3 .team-head { grid-template-columns: auto minmax(0,1fr); } }
