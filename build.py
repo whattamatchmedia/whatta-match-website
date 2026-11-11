@@ -787,7 +787,7 @@ def seo_files():
 - [Insights]({DOMAIN}/insights.html)
 - [Contact]({DOMAIN}/contact.html): {EMAIL}
 """)
-    write("netlify.toml", '[build]\n  publish = "."\n\n[[headers]]\n  for = "/assets/*"\n  [headers.values]\n    Cache-Control = "public, max-age=31536000, immutable"\n')
+    # netlify.toml lives at the repo root (publishes site/), not inside site/
     write("_redirects", "/*    /404.html   404\n")
 
 if __name__ == "__main__":

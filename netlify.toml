@@ -1,0 +1,10 @@
+# Netlify reads this file from the repo root.
+# The built website lives in site/, so that is what gets published.
+[build]
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
