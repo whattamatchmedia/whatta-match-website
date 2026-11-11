@@ -689,9 +689,7 @@ VIZ = {
                             ("USA", ["Own market research", "Own proposition test", "Invitation-flow prototype"])],
                       middle=["Purchase occasion", "Who forms the group", "Why people accept", "Where coordination breaks"])],
     "ava": [dict(type="flow", eyebrow="The daily rhythm", title="One space, different moments",
-                 steps=[("9 AM", "Breakfast at Sunnyside Social"), ("Noon", "The pizza counter opens"), ("Afternoon", "Brunch and working visits"), ("7 PM", "The terrace becomes AVA"), ("8:30 PM", "Unplugged live music")]),
-            dict(type="tiles", eyebrow="The Unplugged tabletop", title="A small format with a clear order",
-                 tiles=[("4 \u00d7 6", "Inch, two-sided tabletop"), ("2", "Artists, one on each side"), ("8:30 PM", "Onwards, both nights"), ("1", "Event identity across both sides")])],
+                 steps=[("9 AM", "Breakfast at Sunnyside Social"), ("Noon", "The pizza counter opens"), ("Afternoon", "Brunch and working visits"), ("7 PM", "The terrace becomes AVA"), ("8:30 PM", "Unplugged live music")])],
     "bann-thann-ke-old": [dict(type="flow", eyebrow="The launch journey", title="From discovery to a store visit",
                            steps=[("Product story", "Launch carousel"), ("Social", "Posts, stories, reels"), ("WhatsApp", "And word of mouth"), ("In store", "Product placement"), ("Community space", "A reason to visit")]),
                       dict(type="stat", value="21 Oct", label="Launch date, 2026", note="Planned on a short timeline.")],
@@ -984,7 +982,7 @@ def case_study():
 </div></section>
 <section class="sec"><div class="wrap">
   <a class="next-project reveal" href="{nxt["slug"]}.html"><span class="mono muted">Next project</span>
-    <span class="next-name">{nxt["brand"]} <span class="arrow" aria-hidden="true">→</span></span><span class="muted">{nxt["card"]}</span></a>
+    <span class="next-name">{brand_mark(nxt, "../", "next-logo")} <span class="arrow" aria-hidden="true">→</span></span><span class="muted">{nxt["card"]}</span></a>
 </div></section>
 {contact_block(d)}
 </main>

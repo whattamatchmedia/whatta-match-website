@@ -653,3 +653,8 @@ main { position: relative; z-index: 2; }
 .viz-tiles { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 .team-head .h3 { color: var(--cream); transition: color .35s var(--ease); }
 .team-card:hover .team-head .h3, .team-card:focus-within .team-head .h3 { color: var(--amber); }
+
+/* next project: real brand logo */
+.next-name { display: inline-flex; align-items: center; gap: .6em; }
+.next-name .next-logo { height: clamp(48px, 6vw, 80px); width: auto; max-width: 320px; object-fit: contain; }
+.next-name .brand-word.next-logo { height: auto; }
